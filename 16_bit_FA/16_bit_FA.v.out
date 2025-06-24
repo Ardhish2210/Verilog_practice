@@ -1,0 +1,41 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000024a96932ce0 .scope module, "FullAdder" "FullAdder" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "a";
+    .port_info 1 /INPUT 16 "b";
+    .port_info 2 /INPUT 16 "c_in";
+    .port_info 3 /OUTPUT 16 "sum";
+    .port_info 4 /OUTPUT 16 "c_out";
+o0000024a96967088 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+o0000024a969670b8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+L_0000024a9691ab00 .functor XOR 16, o0000024a96967088, o0000024a969670b8, C4<0000000000000000>, C4<0000000000000000>;
+o0000024a969670e8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+L_0000024a96933750 .functor XOR 16, L_0000024a9691ab00, o0000024a969670e8, C4<0000000000000000>, C4<0000000000000000>;
+L_0000024a9691ec20 .functor AND 16, o0000024a96967088, o0000024a969670b8, C4<1111111111111111>, C4<1111111111111111>;
+L_0000024a9691ec90 .functor AND 16, o0000024a969670b8, o0000024a969670e8, C4<1111111111111111>, C4<1111111111111111>;
+L_0000024a9691ed00 .functor OR 16, L_0000024a9691ec20, L_0000024a9691ec90, C4<0000000000000000>, C4<0000000000000000>;
+L_0000024a9691ed70 .functor AND 16, o0000024a96967088, o0000024a969670e8, C4<1111111111111111>, C4<1111111111111111>;
+L_0000024a9691ede0 .functor OR 16, L_0000024a9691ed00, L_0000024a9691ed70, C4<0000000000000000>, C4<0000000000000000>;
+v0000024a9691aa60_0 .net *"_ivl_0", 15 0, L_0000024a9691ab00;  1 drivers
+v0000024a96932e70_0 .net *"_ivl_10", 15 0, L_0000024a9691ed70;  1 drivers
+v0000024a96932f10_0 .net *"_ivl_4", 15 0, L_0000024a9691ec20;  1 drivers
+v0000024a96932fb0_0 .net *"_ivl_6", 15 0, L_0000024a9691ec90;  1 drivers
+v0000024a96933050_0 .net *"_ivl_8", 15 0, L_0000024a9691ed00;  1 drivers
+v0000024a9691e900_0 .net "a", 15 0, o0000024a96967088;  0 drivers
+v0000024a9691e9a0_0 .net "b", 15 0, o0000024a969670b8;  0 drivers
+v0000024a9691ea40_0 .net "c_in", 15 0, o0000024a969670e8;  0 drivers
+v0000024a9691eae0_0 .net "c_out", 15 0, L_0000024a9691ede0;  1 drivers
+v0000024a9691eb80_0 .net "sum", 15 0, L_0000024a96933750;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "16_bit_FA.v";
