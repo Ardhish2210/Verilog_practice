@@ -26,9 +26,7 @@ reg [1:0] state;
         default: begin 
                 light <= RED; 
                 state <= S0;
-        end
-            
+        end            
         endcase
-    end
-    
+    end    
 endmodule
