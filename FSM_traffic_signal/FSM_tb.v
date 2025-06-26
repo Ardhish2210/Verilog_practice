@@ -8,7 +8,6 @@ wire [2:0] light;
 
 FSM uut (clk, light);
 
-
 always #5 clk = ~clk;
 initial begin
     clk = 1'b0;
