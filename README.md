@@ -15,23 +15,11 @@ This collection showcases fundamental Verilog concepts and implementations, feat
 - **Communication Protocols** - UART, SPI, I2C implementations
 - **Testbenches** - Comprehensive verification for each design
 
-## 🚀 Quick Start
-
-Each directory contains:
-```
-module_name/
-├── src/           # Verilog source files (.v)
-├── tb/            # Testbench files (.v)
-├── docs/          # Documentation and waveforms
-└── README.md      # Module-specific details
-```
-
 ## 🛠️ Tools & Environment
 
 - **Simulator**: Icarus Verilog / ModelSim / Vivado
 - **Waveform Viewer**: GTKWave / Vivado
 - **Synthesis**: Yosys / Vivado
-- **Target FPGA**: [Your FPGA board if applicable]
 
 ## 📚 Learning Path
 
@@ -52,11 +40,6 @@ My progression through Verilog concepts:
 - **VGA Controller** - Video display interface
 - **Simple CPU** - Basic processor with instruction set
 
-### 📊 Repository Stats
-- **Total Modules**: [Update as you add more]
-- **Lines of Code**: [Approximate count]
-- **Test Coverage**: Comprehensive testbenches for all modules
-
 ## 🤝 Connect & Collaborate
 
 Found something interesting? Have suggestions for improvement? 
@@ -74,13 +57,6 @@ Helpful references I've used during this journey:
 - [IEEE 1364 Verilog Standard](https://standards.ieee.org/)
 - [Digital Design by Morris Mano](https://www.amazon.com/Digital-Design-Computer-Architecture-Architecture/dp/0123944244)
 
-## ⚡ Fun Facts
-
-- **First Module Written**: [Date when you started]
-- **Favorite Design Pattern**: [Your preference - state machines, pipelines, etc.]
-- **Current Focus**: [What you're learning now]
-- **Next Goal**: [Your next learning target]
-
 ---
 
 <div align="center">
@@ -90,7 +66,6 @@ Helpful references I've used during this journey:
 *This repository represents my continuous learning journey in digital design.*  
 *Every commit is a step forward in mastering the art of hardware description.*
 
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/yourusername/VERILOG_PRACTICE)
 [![Verilog](https://img.shields.io/badge/Language-Verilog-blue.svg)](https://verilog.com/)
 [![Learning](https://img.shields.io/badge/Status-Learning-green.svg)](#)
 
