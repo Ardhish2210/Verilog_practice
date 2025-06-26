@@ -1,5 +1,5 @@
 module FSM (clk, light);
-
+    
 input clk;
 output reg [0:2] light;
 parameter RED = 3'b000, GREEN = 3'b010, YELLOW = 3'b001;
