@@ -1,0 +1,91 @@
+$date
+	Fri Jun 27 17:18:30 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module four_bit_subtractor_tb $end
+$var wire 4 ! sub [3:0] $end
+$var wire 1 " borrow $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$scope module uut $end
+$var wire 4 % a [3:0] $end
+$var wire 4 & b [3:0] $end
+$var wire 1 " borrow $end
+$var wire 5 ' temp [4:0] $end
+$var wire 4 ( sub [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+x"
+bx !
+$end
+#3
+0"
+b101 !
+b101 (
+b10101 '
+b100 $
+b100 &
+b1001 #
+b1001 %
+#6
+1"
+b1100 !
+b1100 (
+b111 $
+b111 &
+b1100 '
+b11 #
+b11 %
+#9
+0"
+b1110 !
+b1110 (
+b1 $
+b1 &
+b11110 '
+b1111 #
+b1111 %
+#12
+b0 !
+b0 (
+b101 $
+b101 &
+b10000 '
+b101 #
+b101 %
+#15
+1"
+b1111 !
+b1111 (
+b1 $
+b1 &
+b1111 '
+b0 #
+b0 %
+#18
+0"
+b11 !
+b11 (
+b11 $
+b11 &
+b10011 '
+b110 #
+b110 %
+#20
