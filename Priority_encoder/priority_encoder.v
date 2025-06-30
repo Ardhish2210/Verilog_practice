@@ -3,7 +3,7 @@ module priority_encoder (
     input valid,
     output reg [2:0] out
 );
-
+    
 always @(*) begin
     if (!valid)
         out = 3'b000;
