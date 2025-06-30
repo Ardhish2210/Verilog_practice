@@ -2,7 +2,7 @@
 `include "priority_encoder.v"
 
 module priority_encoder_tb ();
-
+    
 reg [7:0] a;
 reg valid;
 wire [2:0] out;
