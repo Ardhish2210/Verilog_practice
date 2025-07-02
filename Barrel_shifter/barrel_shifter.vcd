@@ -1,0 +1,61 @@
+$date
+	Wed Jul 02 15:39:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module barrel_shifter_tb $end
+$var wire 4 ! out [3:0] $end
+$var reg 2 " N [1:0] $end
+$var reg 4 # a [3:0] $end
+$var reg 2 $ sel [1:0] $end
+$scope module uut $end
+$var wire 2 % N [1:0] $end
+$var wire 4 & a [3:0] $end
+$var wire 2 ' sel [1:0] $end
+$var reg 4 ( out [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+bx !
+$end
+#2
+b111 !
+b111 (
+b1 "
+b1 %
+b0 $
+b0 '
+b1011 #
+b1011 &
+#4
+b1101 !
+b1101 (
+b1 $
+b1 '
+#6
+b110 !
+b110 (
+b10 $
+b10 '
+#8
+b101 !
+b101 (
+b11 $
+b11 '
+#10
