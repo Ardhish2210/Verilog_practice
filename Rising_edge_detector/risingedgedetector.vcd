@@ -1,0 +1,69 @@
+$date
+	Sat Jul 05 17:03:28 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module risingedgedetector_tb $end
+$var wire 1 ! out $end
+$var reg 1 " clk $end
+$var reg 1 # d $end
+$var reg 1 $ rst $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 1 # d $end
+$var wire 1 $ rst $end
+$var reg 1 ! out $end
+$var reg 1 % q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+1$
+0#
+0"
+0!
+$end
+#5
+1"
+#8
+0$
+#10
+0"
+#11
+1#
+#15
+1%
+1!
+1"
+#20
+0"
+#21
+0#
+#25
+0%
+0!
+1"
+#30
+0"
+#35
+1"
+#40
+0"
+#41
+1#
+#45
+1%
+1!
+1"
+#50
+0"
+#51
