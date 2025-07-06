@@ -1,0 +1,104 @@
+$date
+	Sun Jul 06 18:27:21 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module four_bit_counter_tb $end
+$var wire 4 ! out [3:0] $end
+$var reg 1 " clk $end
+$var reg 1 # clr $end
+$var reg 4 $ in [3:0] $end
+$var reg 1 % ld $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 1 # clr $end
+$var wire 4 & in [3:0] $end
+$var wire 1 % ld $end
+$var wire 4 ' out [3:0] $end
+$var reg 4 ( count [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx (
+bx '
+b1010 &
+x%
+b1010 $
+x#
+0"
+bx !
+$end
+#3
+0#
+1%
+#5
+b1010 !
+b1010 '
+b1010 (
+1"
+#10
+0"
+#13
+0%
+#15
+b1011 !
+b1011 '
+b1011 (
+1"
+#20
+0"
+#23
+b1111 $
+b1111 &
+#25
+b1100 !
+b1100 '
+b1100 (
+1"
+#30
+0"
+#33
+1#
+#35
+b0 !
+b0 '
+b0 (
+1"
+#40
+0"
+#43
+0#
+#45
+b1 !
+b1 '
+b1 (
+1"
+#50
+0"
+#53
+1%
+#55
+b1111 !
+b1111 '
+b1111 (
+1"
+#60
+0"
+#65
+1"
+#70
+0"
+#75
+1"
+#80
+0"
+#83
