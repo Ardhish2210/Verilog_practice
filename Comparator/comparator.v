@@ -1,5 +1,5 @@
 module comparator(a, b, LT, GT, EQ);
-
+    
 input [3:0] a, b;
 output reg LT, GT, EQ;
 integer i;
