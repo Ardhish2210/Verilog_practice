@@ -7,7 +7,7 @@ reg clk, rst;
 reg [1:0] sel;
 reg [3:0] d;
 wire [3:0] q;
-
+    
 shift_register uut (.clk(clk), .rst(rst), .sel(sel), .d(d), .q(q));
 
 always #5 clk = ~clk;
