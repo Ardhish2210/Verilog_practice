@@ -1,0 +1,123 @@
+$date
+	Wed Jul 09 21:39:02 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module shift_register_tb $end
+$var wire 4 ! q [3:0] $end
+$var reg 1 " clk $end
+$var reg 4 # d [3:0] $end
+$var reg 1 $ rst $end
+$var reg 2 % sel [1:0] $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 4 & d [3:0] $end
+$var wire 1 $ rst $end
+$var wire 2 ' sel [1:0] $end
+$var reg 4 ( q [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 (
+b0 '
+b0 &
+b0 %
+1$
+b0 #
+0"
+b0 !
+$end
+#5
+1"
+#10
+0"
+0$
+#15
+1"
+#20
+0"
+b1010 #
+b1010 &
+b11 %
+b11 '
+#25
+b1010 !
+b1010 (
+1"
+#30
+0"
+b0 %
+b0 '
+#35
+1"
+#40
+0"
+b1 %
+b1 '
+#45
+b101 !
+b101 (
+1"
+#50
+0"
+b10 %
+b10 '
+#55
+b1010 !
+b1010 (
+1"
+#60
+0"
+b1100 #
+b1100 &
+b11 %
+b11 '
+#65
+b1100 !
+b1100 (
+1"
+#70
+0"
+b1 %
+b1 '
+#75
+b110 !
+b110 (
+1"
+#80
+0"
+#85
+b11 !
+b11 (
+1"
+#90
+0"
+b10 %
+b10 '
+#95
+b110 !
+b110 (
+1"
+#100
+0"
+#105
+b1100 !
+b1100 (
+1"
+#110
+0"
+#115
+b1000 !
+b1000 (
+1"
+#120
+0"
