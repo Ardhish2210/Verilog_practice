@@ -21,7 +21,7 @@ initial begin
     #1  $finish;
 
 end
-
+    
 initial begin
     $dumpfile("mux_tb.vcd");
     $dumpvars(0, mux_tb);    
