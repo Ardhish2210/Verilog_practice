@@ -1,0 +1,79 @@
+$date
+	Thu Jul 10 20:57:48 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module moore_fsm_tb $end
+$var wire 1 ! out $end
+$var reg 1 " clk $end
+$var reg 1 # in $end
+$var reg 1 $ rst $end
+$scope module fsm $end
+$var wire 1 " clk $end
+$var wire 1 # in $end
+$var wire 1 $ rst $end
+$var parameter 1 % ACTIVE $end
+$var parameter 1 & IDLE $end
+$var reg 1 ! out $end
+$var reg 1 ' state $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+0&
+1%
+$end
+#0
+$dumpvars
+0'
+1$
+0#
+0"
+0!
+$end
+#5
+1"
+#10
+0"
+0$
+#15
+1"
+#20
+0"
+#25
+1"
+#30
+0"
+1#
+#35
+1!
+1'
+1"
+#40
+0"
+#45
+1"
+#50
+0"
+0#
+#55
+1"
+#60
+0!
+0'
+0"
+1$
+#65
+1"
+#70
+0"
+0$
+#75
+1"
+#80
+0"
