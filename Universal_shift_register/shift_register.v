@@ -1,5 +1,5 @@
 module shift_register (clk, rst, sel, d, q);
-
+    
 input clk;
 input rst;
 input [1:0] sel;    
