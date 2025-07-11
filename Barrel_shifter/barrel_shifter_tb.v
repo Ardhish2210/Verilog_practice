@@ -7,7 +7,7 @@ reg [1:0] sel;
 reg [3:0] a;
 reg [1:0] N;
 wire [3:0] out;
-
+    
 barrel_shifter uut (.a(a), .sel(sel), .out(out), .N(N));
 
 initial begin
