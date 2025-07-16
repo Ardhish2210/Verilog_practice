@@ -1,0 +1,77 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000012b86bcd140 .scope module, "vedic_two" "vedic_two" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 4 "out";
+L_0000012b86c23610 .functor AND 1, L_0000012b86ca6030, L_0000012b86ca6670, C4<1>, C4<1>;
+L_0000012b86c54430 .functor AND 1, L_0000012b86ca6a30, L_0000012b86ca6990, C4<1>, C4<1>;
+L_0000012b86c549e0 .functor AND 1, L_0000012b86ca5b30, L_0000012b86ca7750, C4<1>, C4<1>;
+L_0000012b86c54a50 .functor AND 1, L_0000012b86ca6ad0, L_0000012b86ca7610, C4<1>, C4<1>;
+v0000012b86c53ec0_0 .net *"_ivl_12", 0 0, L_0000012b86ca5b30;  1 drivers
+v0000012b86c540a0_0 .net *"_ivl_14", 0 0, L_0000012b86ca7750;  1 drivers
+v0000012b86c53ba0_0 .net *"_ivl_17", 0 0, L_0000012b86ca6ad0;  1 drivers
+v0000012b86c53c40_0 .net *"_ivl_19", 0 0, L_0000012b86ca7610;  1 drivers
+v0000012b86c54000_0 .net *"_ivl_2", 0 0, L_0000012b86ca6030;  1 drivers
+v0000012b86c541e0_0 .net *"_ivl_4", 0 0, L_0000012b86ca6670;  1 drivers
+v0000012b86c53ce0_0 .net *"_ivl_7", 0 0, L_0000012b86ca6a30;  1 drivers
+v0000012b86c53a60_0 .net *"_ivl_9", 0 0, L_0000012b86ca6990;  1 drivers
+o0000012b86c59428 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000012b86c53380_0 .net "a", 1 0, o0000012b86c59428;  0 drivers
+o0000012b86c59458 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000012b86c53920_0 .net "b", 1 0, o0000012b86c59458;  0 drivers
+v0000012b86c537e0_0 .net "cout1", 0 0, L_0000012b86c54c50;  1 drivers
+v0000012b86c53d80_0 .net "cout2", 0 0, L_0000012b86ca7cb0;  1 drivers
+v0000012b86c532e0_0 .net "out", 3 0, L_0000012b86ca6850;  1 drivers
+v0000012b86c53420_0 .net "sum", 0 0, L_0000012b86c54be0;  1 drivers
+v0000012b86c534c0_0 .net "sum2", 0 0, L_0000012b86c54de0;  1 drivers
+v0000012b86c53740_0 .net "w1", 0 0, L_0000012b86c23610;  1 drivers
+v0000012b86c539c0_0 .net "w2", 0 0, L_0000012b86c54430;  1 drivers
+v0000012b86c53880_0 .net "w3", 0 0, L_0000012b86c549e0;  1 drivers
+v0000012b86c53b00_0 .net "w4", 0 0, L_0000012b86c54a50;  1 drivers
+L_0000012b86ca6030 .part o0000012b86c59428, 0, 1;
+L_0000012b86ca6670 .part o0000012b86c59458, 0, 1;
+L_0000012b86ca6a30 .part o0000012b86c59428, 1, 1;
+L_0000012b86ca6990 .part o0000012b86c59458, 0, 1;
+L_0000012b86ca5b30 .part o0000012b86c59428, 0, 1;
+L_0000012b86ca7750 .part o0000012b86c59458, 1, 1;
+L_0000012b86ca6ad0 .part o0000012b86c59428, 1, 1;
+L_0000012b86ca7610 .part o0000012b86c59458, 1, 1;
+L_0000012b86ca6850 .concat [ 1 1 1 1], L_0000012b86c23610, L_0000012b86c54be0, L_0000012b86c54de0, L_0000012b86ca7cb0;
+S_0000012b86bcd2d0 .scope module, "h1" "half_adder" 2 14, 2 22 0, S_0000012b86bcd140;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "cout";
+L_0000012b86c54be0 .functor XOR 1, L_0000012b86c54430, L_0000012b86c549e0, C4<0>, C4<0>;
+L_0000012b86c54c50 .functor AND 1, L_0000012b86c54430, L_0000012b86c549e0, C4<1>, C4<1>;
+v0000012b86c22ce0_0 .net "cout", 0 0, L_0000012b86c54c50;  alias, 1 drivers
+v0000012b86c531f0_0 .net "sum", 0 0, L_0000012b86c54be0;  alias, 1 drivers
+v0000012b86c53e20_0 .net "x", 0 0, L_0000012b86c54430;  alias, 1 drivers
+v0000012b86c53560_0 .net "y", 0 0, L_0000012b86c549e0;  alias, 1 drivers
+S_0000012b86c542a0 .scope module, "h2" "half_adder" 2 15, 2 22 0, S_0000012b86bcd140;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "cout";
+L_0000012b86c54de0 .functor XOR 1, L_0000012b86c54a50, L_0000012b86c54c50, C4<0>, C4<0>;
+L_0000012b86ca7cb0 .functor AND 1, L_0000012b86c54a50, L_0000012b86c54c50, C4<1>, C4<1>;
+v0000012b86c53600_0 .net "cout", 0 0, L_0000012b86ca7cb0;  alias, 1 drivers
+v0000012b86c536a0_0 .net "sum", 0 0, L_0000012b86c54de0;  alias, 1 drivers
+v0000012b86c53f60_0 .net "x", 0 0, L_0000012b86c54a50;  alias, 1 drivers
+v0000012b86c54140_0 .net "y", 0 0, L_0000012b86c54c50;  alias, 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "vedic_two.v";
