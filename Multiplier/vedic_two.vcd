@@ -1,0 +1,111 @@
+$date
+	Wed Jul 16 20:34:46 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module vedic_two_tb $end
+$var wire 4 ! out [0:3] $end
+$var reg 2 " a [0:1] $end
+$var reg 2 # b [0:1] $end
+$scope module uut $end
+$var wire 2 $ a [1:0] $end
+$var wire 2 % b [1:0] $end
+$var wire 1 & w1 $end
+$var wire 1 ' w2 $end
+$var wire 1 ( w3 $end
+$var wire 1 ) w4 $end
+$var wire 1 * sum2 $end
+$var wire 1 + sum $end
+$var wire 4 , out [3:0] $end
+$var wire 1 - cout2 $end
+$var wire 1 . cout1 $end
+$scope module h1 $end
+$var wire 1 . cout $end
+$var wire 1 + sum $end
+$var wire 1 ' x $end
+$var wire 1 ( y $end
+$upscope $end
+$scope module h2 $end
+$var wire 1 - cout $end
+$var wire 1 * sum $end
+$var wire 1 ) x $end
+$var wire 1 . y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0.
+0-
+b0 ,
+0+
+0*
+0)
+0(
+0'
+0&
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1 !
+b1 ,
+1&
+b1 #
+b1 %
+b1 "
+b1 $
+#20
+1*
+b100 !
+b100 ,
+0&
+1)
+b10 #
+b10 %
+b10 "
+b10 $
+#30
+0*
+1-
+1.
+1'
+b1001 !
+b1001 ,
+1&
+1(
+b11 #
+b11 %
+b11 "
+b11 $
+#40
+0-
+1+
+0.
+0)
+b10 !
+b10 ,
+0&
+0(
+b1 #
+b1 %
+b10 "
+b10 $
+#50
+b11 !
+b11 ,
+1&
+b11 "
+b11 $
+#60
