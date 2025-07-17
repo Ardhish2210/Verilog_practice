@@ -1,0 +1,345 @@
+$date
+	Thu Jul 17 21:47:37 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module RISC_32bit_tb $end
+$var reg 1 ! clk1 $end
+$var reg 1 " clk2 $end
+$var integer 32 # k [31:0] $end
+$scope module mips $end
+$var wire 1 ! clk1 $end
+$var wire 1 " clk2 $end
+$var parameter 6 $ ADD $end
+$var parameter 6 % ADDI $end
+$var parameter 6 & AND $end
+$var parameter 6 ' BEQZ $end
+$var parameter 6 ( BNEQZ $end
+$var parameter 3 ) BRANCH $end
+$var parameter 3 * HALT $end
+$var parameter 6 + HLT $end
+$var parameter 3 , LOAD $end
+$var parameter 6 - LW $end
+$var parameter 6 . MUL $end
+$var parameter 6 / OR $end
+$var parameter 3 0 RM_ALU $end
+$var parameter 3 1 RR_ALU $end
+$var parameter 6 2 SLT $end
+$var parameter 6 3 SLTI $end
+$var parameter 3 4 STORE $end
+$var parameter 6 5 SUB $end
+$var parameter 6 6 SUBI $end
+$var parameter 6 7 SW $end
+$var reg 32 8 EX_MEM_ALUOut [31:0] $end
+$var reg 32 9 EX_MEM_B [31:0] $end
+$var reg 32 : EX_MEM_IR [31:0] $end
+$var reg 1 ; EX_MEM_cond $end
+$var reg 3 < EX_MEM_type [2:0] $end
+$var reg 1 = Halted $end
+$var reg 32 > ID_EX_A [31:0] $end
+$var reg 32 ? ID_EX_B [31:0] $end
+$var reg 32 @ ID_EX_IR [31:0] $end
+$var reg 32 A ID_EX_Imm [31:0] $end
+$var reg 32 B ID_EX_NPC [31:0] $end
+$var reg 3 C ID_EX_type [2:0] $end
+$var reg 32 D IF_ID_IR [31:0] $end
+$var reg 32 E IF_ID_NPC [31:0] $end
+$var reg 32 F MEM_WB_ALUOut [31:0] $end
+$var reg 32 G MEM_WB_IR [31:0] $end
+$var reg 32 H MEM_WB_LMD [31:0] $end
+$var reg 3 I MEM_WB_type [2:0] $end
+$var reg 32 J PC [31:0] $end
+$var reg 1 K taken_branch $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1001 7
+b1011 6
+b1 5
+b11 4
+b1100 3
+b100 2
+b0 1
+b1 0
+b11 /
+b101 .
+b1000 -
+b10 ,
+b111111 +
+b101 *
+b100 )
+b1101 (
+b1110 '
+b10 &
+b1010 %
+b0 $
+$end
+#0
+$dumpvars
+0K
+b0 J
+bx I
+bx H
+bx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+0=
+bx <
+x;
+bx :
+bx 9
+bx 8
+b11111 #
+0"
+0!
+$end
+#5
+b1 J
+b1 E
+b101000000000010000000000001010 D
+1!
+#10
+0!
+#15
+b1 C
+b1010 A
+b101000000000010000000000001010 @
+b1 B
+b1 ?
+b0 >
+1"
+#20
+0"
+#25
+b1010 8
+b101000000000010000000000001010 :
+b1 <
+b10 J
+b10 E
+b101000000000100000000000010100 D
+1!
+#30
+0!
+#35
+b1010 F
+b101000000000010000000000001010 G
+b1 I
+b10100 A
+b101000000000100000000000010100 @
+b10 B
+b10 ?
+1"
+#40
+0"
+#45
+b11 J
+b11 E
+b101000000000110000000000011001 D
+b10100 8
+b101000000000100000000000010100 :
+1!
+#50
+0!
+#55
+b11001 A
+b101000000000110000000000011001 @
+b11 B
+b11 ?
+b10100 F
+b101000000000100000000000010100 G
+1"
+#60
+0"
+#65
+b11001 8
+b101000000000110000000000011001 :
+b100 J
+b100 E
+b1100111001110111100000000000 D
+1!
+#70
+0!
+#75
+b11001 F
+b101000000000110000000000011001 G
+b0 C
+b111100000000000 A
+b1100111001110111100000000000 @
+b100 B
+b111 ?
+b111 >
+1"
+#80
+0"
+#85
+b101 J
+b101 E
+b111 8
+b1100111001110111100000000000 :
+b0 <
+1!
+#90
+0!
+#95
+b101 B
+b111 F
+b1100111001110111100000000000 G
+b0 I
+1"
+#100
+0"
+#105
+b110 J
+b110 E
+b1000100010000000000000 D
+1!
+#110
+0!
+#115
+b10000000000000 A
+b1000100010000000000000 @
+b110 B
+b10100 ?
+b1010 >
+1"
+#120
+0"
+#125
+b111 J
+b111 E
+b1100111001110111100000000000 D
+b11110 8
+b1000100010000000000000 :
+1!
+#130
+0!
+#135
+b111100000000000 A
+b1100111001110111100000000000 @
+b111 B
+b111 ?
+b111 >
+b11110 F
+b1000100010000000000000 G
+1"
+#140
+0"
+#145
+b111 8
+b1100111001110111100000000000 :
+b1000 J
+b1000 E
+b100000110010100000000000 D
+1!
+#150
+0!
+#155
+b111 F
+b1100111001110111100000000000 G
+b10100000000000 A
+b100000110010100000000000 @
+b1000 B
+b11001 ?
+b11110 >
+1"
+#160
+0"
+#165
+b1001 J
+b1001 E
+b11111100000000000000000000000000 D
+b110111 8
+b100000110010100000000000 :
+1!
+#170
+0!
+#175
+b101 C
+b0 A
+b11111100000000000000000000000000 @
+b1001 B
+b0 ?
+b0 >
+b110111 F
+b100000110010100000000000 G
+1"
+#180
+0"
+#185
+b11111100000000000000000000000000 :
+b101 <
+b1010 J
+b1010 E
+bx D
+1!
+#190
+0!
+#195
+b11111100000000000000000000000000 G
+b101 I
+bx A
+bx @
+b1010 B
+bx ?
+bx >
+1"
+#200
+0"
+#205
+b1011 J
+b1011 E
+bx :
+1=
+1!
+#210
+0!
+#215
+1"
+#220
+0"
+#225
+1!
+#230
+0!
+#235
+1"
+#240
+0"
+#245
+1!
+#250
+0!
+#255
+1"
+#260
+0"
+#265
+1!
+#270
+0!
+#275
+1"
+#280
+0"
+b110 #
+#285
+1!
+#290
+0!
+#295
+1"
+#300
+0"
