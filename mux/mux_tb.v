@@ -17,8 +17,8 @@ initial begin
     #3 a = 4'b1010; sel = 2'b10;
     #3 a = 4'b1010; sel = 2'b11;
 
-    #1  $display("The program is successfully completed");
-    #1  $finish;
+    #3  $display("The program is successfully completed");
+    #3  $finish;
 
 end
     
