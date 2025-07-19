@@ -2,7 +2,7 @@ module t_ff (t, clk, rst, q);
 
 input t, clk, rst;
 output reg q;
-
+    
 always @(posedge clk or posedge rst) begin
     if(rst) begin
         q <= 1'b0;
