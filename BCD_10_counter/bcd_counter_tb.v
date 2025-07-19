@@ -2,7 +2,7 @@
 `include "bcd_counter.v"
 
 module bcd_counter_tb;
-
+    
 wire [3:0] out;
 reg clk, rst;
 
