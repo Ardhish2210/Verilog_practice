@@ -24,7 +24,7 @@ always @(*) begin
     S2: next_state = in ? S3:S0;
     S3: begin
         next_state = in ? S1:S2;
-        out <= 1'b1;
+        out = 1'b1;
     end 
     default: begin
                 next_state = S0;
