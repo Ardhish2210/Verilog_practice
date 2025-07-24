@@ -1,0 +1,121 @@
+$date
+	Thu Jul 24 19:26:24 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module music_player_tb $end
+$var wire 2 ! song [1:0] $end
+$var wire 1 " is_playing $end
+$var reg 1 # clk $end
+$var reg 1 $ next $end
+$var reg 1 % play_pause $end
+$var reg 1 & prev $end
+$var reg 1 ' rst $end
+$scope module uut $end
+$var wire 1 # clk $end
+$var wire 1 $ next $end
+$var wire 1 % play_pause $end
+$var wire 1 & prev $end
+$var wire 1 ' rst $end
+$var parameter 2 ( IDLE $end
+$var parameter 2 ) NEXT $end
+$var parameter 2 * PAUSE $end
+$var parameter 2 + PLAYING $end
+$var reg 1 " is_playing $end
+$var reg 2 , next_state [1:0] $end
+$var reg 2 - song [1:0] $end
+$var reg 2 . state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 +
+b10 *
+b0 )
+b0 (
+$end
+#0
+$dumpvars
+b0 .
+b0 -
+b0 ,
+1'
+0&
+0%
+0$
+0#
+0"
+b0 !
+$end
+#5
+1#
+0'
+#10
+0#
+1%
+#15
+b1 ,
+1"
+1#
+#20
+0#
+0%
+#25
+b1 .
+1#
+#30
+0#
+1$
+#35
+b1 !
+b1 -
+1#
+#40
+0#
+0$
+#45
+1#
+#50
+0#
+1$
+#55
+b10 !
+b10 -
+1#
+#60
+0#
+0$
+#65
+1#
+#70
+0#
+1&
+#75
+b1 !
+b1 -
+1#
+#80
+0#
+0&
+#85
+1#
+#90
+0#
+1%
+#95
+b10 ,
+0"
+1#
+#100
+0#
+0%
+#105
+b10 .
+1#
+#110
+0#
