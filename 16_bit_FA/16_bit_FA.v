@@ -48,3 +48,4 @@ module full_adder (
     assign Cout = (A & B) | (Cin & (A ^ B));
 
 endmodule
+
