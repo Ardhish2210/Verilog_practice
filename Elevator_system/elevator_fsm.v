@@ -46,6 +46,7 @@ always @(*) begin
             else
                 next_state = DOWN;
         end
+        
         STAY: begin
             if (up_request && current_floor != 2'b11)
                 next_state = UP;
@@ -59,10 +60,9 @@ always @(*) begin
     endcase
 end
 
-// Output logic (Moore FSM: depends only on state)
 always @(*) begin
     case (state)
-        IDLE:   direction = 2'b00; // Stay
+        IDLE:   direction = 2'b00; 
         UP:     direction = 2'b01;
         DOWN:   direction = 2'b10;
         STAY:   direction = 2'b00;
