@@ -9,7 +9,6 @@ output reg [1:0] direction;
 reg [1:0] state, next_state;
 parameter IDLE = 2'b00, UP = 2'b01, DOWN = 2'b10, STAY = 2'b11;
 
-// Sequential logic (State register)
 always @(posedge clk or posedge rst) begin
     if (rst)
         state <= IDLE;
@@ -17,7 +16,6 @@ always @(posedge clk or posedge rst) begin
         state <= next_state;
 end
 
-// Next state logic
 always @(*) begin
     case (state)
         IDLE: begin
@@ -32,24 +30,22 @@ always @(*) begin
         end
 
         UP: begin
-    if (current_floor == 2'b11)
-        next_state = STAY;
-    else if (!up_request)
-        next_state = DOWN;  // switch if new down request
-    else
-        next_state = UP;
-end
+            if (current_floor == 2'b11)
+                next_state = STAY;
+            else if (!up_request)
+                next_state = DOWN;  // switch if new down request
+            else
+                next_state = UP;
+        end
 
-DOWN: begin
-    if (current_floor == 2'b00)
-        next_state = STAY;
-    else if (up_request)
-        next_state = UP;    // switch if new up request
-    else
-        next_state = DOWN;
-end
-
-
+        DOWN: begin
+            if (current_floor == 2'b00)
+                next_state = STAY;
+            else if (up_request)
+                next_state = UP;    // switch if new up request
+            else
+                next_state = DOWN;
+        end
         STAY: begin
             if (up_request && current_floor != 2'b11)
                 next_state = UP;
