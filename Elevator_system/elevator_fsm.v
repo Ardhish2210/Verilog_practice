@@ -66,7 +66,7 @@ always @(*) begin
         UP:     direction = 2'b01;
         DOWN:   direction = 2'b10;
         STAY:   direction = 2'b00;
-        default:direction = 2'b00;
+        default: direction = 2'b00;
     endcase
 end
 
