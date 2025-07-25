@@ -5,6 +5,7 @@ input rst;
 input up_request;
 input [1:0] current_floor;
 output reg [1:0] direction;
+    
 reg [1:0] state, next_state;
 
 // State Encoding
