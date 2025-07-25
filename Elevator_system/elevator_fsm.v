@@ -7,12 +7,7 @@ input [1:0] current_floor;
 output reg [1:0] direction;
     
 reg [1:0] state, next_state;
-
-// State Encoding
-parameter IDLE  = 2'b00;
-parameter UP    = 2'b01;
-parameter DOWN  = 2'b10;
-parameter STAY  = 2'b11;
+parameter IDLE = 2'b00, UP = 2'b01, DOWN = 2'b10, STAY = 2'b11;
 
 // Sequential logic (State register)
 always @(posedge clk or posedge rst) begin
