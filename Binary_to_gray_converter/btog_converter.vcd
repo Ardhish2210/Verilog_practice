@@ -1,0 +1,61 @@
+$date
+	Sun Jul 27 22:27:52 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module btog_converter_tb $end
+$var wire 4 ! gray_code [3:0] $end
+$var reg 4 " binary_num [3:0] $end
+$scope module uut $end
+$var wire 4 # binary_num [3:0] $end
+$var reg 4 $ gray_code [3:0] $end
+$var integer 32 % i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11111111111111111111111111111111 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#13
+b1 !
+b1 $
+b11111111111111111111111111111111 %
+b1 "
+b1 #
+#23
+b11 !
+b11 $
+b11111111111111111111111111111111 %
+b10 "
+b10 #
+#33
+b10 !
+b10 $
+b11111111111111111111111111111111 %
+b11 "
+b11 #
+#43
+b110 !
+b110 $
+b11111111111111111111111111111111 %
+b100 "
+b100 #
+#53
+b11111111111111111111111111111111 %
+b1000 !
+b1000 $
+b1111 "
+b1111 #
+#63
