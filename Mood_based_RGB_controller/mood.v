@@ -5,9 +5,12 @@ input clk, rst;
 output reg [2:0] rgb; // rgb[0]=Blue, rgb[1]=Green, rgb[2]=Red,
 output reg blink; // blink = 1 (if ANXIOUS or EXCITED mode is ON)
 
-always @(*) begin
+always @(posedge clk or posedge rst) begin
+    if (rst) begin  
+        rgb = 3'b000;
+        blink = 1'b0;  
+    end else begin
     case (brain_wave)
-
     2'b00: begin // CALM state
         rgb = 3'b000; /// blue
         blink = 1'b0;
@@ -25,7 +28,6 @@ always @(*) begin
         blink = 1'b1;
     end
     endcase
+    end
 end
-
-
 endmodule
