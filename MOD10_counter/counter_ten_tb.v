@@ -12,15 +12,18 @@ initial begin
     $dumpfile("counter_ten.vcd");
     $dumpvars(0, counter_ten_tb);
 
-    $monitor("Time: %0t || clk: %0b || rst: %0b || counter: %0b", $time, clk, rst, counter);
+    $monitor("Time: %0t || clk: %0b || rst: %0b || counter: %04b", $time, clk, rst, counter);
 
     clk = 0;
     rst = 1;
 
     #3 rst = 0;
-    #40 rst = 1;
+    #100 rst = 1;
 
     #10 $finish;
 
 end
+
+always #5 clk = ~clk;
+
 endmodule
