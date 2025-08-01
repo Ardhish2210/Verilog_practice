@@ -15,8 +15,5 @@ initial begin
 
     $monitor("Time: %0t || clk: %0b || rst: %0b || bin_in: %04b || dp_en: %0b || blink_en: %0b || seg: %07b || dp: %0b || en: %0b", $time, clk, rst, bin_in, dp_en, blink_en, seg, dp, en);
 end
-<<<<<<< HEAD
+
 endmodule 
-=======
-endmodule 
->>>>>>> 01990b230cd87bd92f48328c3856327b76ba9259
