@@ -7,5 +7,8 @@ wire [6:0] seg ; // MSB- A, LSB- G
 wire dp;
 wire en;
 
+seven_segement uut (clk, rst, bin_in, dp_en, blink_in, blink_rate, seg, dp, en);
 
+initial begin
+end
 endmodule 
