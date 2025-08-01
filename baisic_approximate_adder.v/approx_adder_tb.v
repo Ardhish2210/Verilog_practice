@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "approx_adder.v"
+
 module approx_adder_tb; 
 
 reg a, b, cin;
@@ -16,14 +19,11 @@ initial begin
     cin = 1'b0;
 
     #3 a = 0; b = 0; cin = 0;
-    #3 a = 0; b = 1; cin = 0;
-    #3 a = 1; b = 0; cin = 0;
-    #3 a = 1; b = 1; cin = 0;
+    #10 a = 0; b = 1; cin = 0;
+    #10 a = 1; b = 0; cin = 0;
+    #10 a = 1; b = 1; cin = 0;
 
-
-
-
-
+    #10 $finish;
 end
     
 endmodule
