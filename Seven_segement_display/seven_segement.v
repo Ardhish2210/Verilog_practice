@@ -3,16 +3,17 @@ module seven_segement (clk, rst, bin_in, dp_en, blink_in, blink_rate, seg, dp, e
 input clk, rst,  dp_en, blink_in;
 input [3:0] bin_in;
 input [23:0] blink_rate;
-output reg seg [6:0]; // MSB- A, LSB- G
-output dp;
-output en; 
+output reg [6:0] seg ; // MSB- A, LSB- G
+output reg dp;
+output reg en; 
 
-always @(posedge clk or negedge rst) begin
+always @(posedge clk or posedge rst) begin
     if (rst) begin
         seg <= 7'b1111111;
         dp <= 1'b1;
-        en <= 1'b0
+        en <= 1'b0;
     end
+
     case (bin_in)
     4'b0000: seg <= 7'b1111110;
     4'b0001: seg <= 7'b0110000;
@@ -28,9 +29,11 @@ always @(posedge clk or negedge rst) begin
 
     if (dp_en == 1'b1) begin
         dp = 1'b0;
-    end else if (blink_en == 1'b1) begin
+    end 
 
-    end
+    // else if (blink_en == 1'b1) begin
+
+    // end
 end
     
 endmodule
