@@ -23,30 +23,14 @@ initial begin
     blink_rate = 24'd10;
 
     #8 rst = 0;
-
-    // Show digit 2 without blink or dp
     #3 bin_in = 4'b0010;
-
-    // Enable decimal point
     #10 dp_en = 1;
-
-    // Enable blink
     #10 blink_in = 1;
-
-    // Change digit to 5
     #30 bin_in = 4'b0101;
-
-    // Change blink rate
-    #50 blink_rate = 24'd5;
-
-    // Disable blink and decimal
+    #50 blink_rate = 24'd6;
     #50 blink_in = 0;
     dp_en = 0;
-
-    // Final digit test
     #20 bin_in = 4'b1001;
-
-    // Finish simulation
     #50 $finish;
 end
 
