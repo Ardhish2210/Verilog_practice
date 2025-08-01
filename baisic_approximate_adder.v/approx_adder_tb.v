@@ -4,5 +4,7 @@ reg a, b, cin;
 wire sum, cout;
 
 approx_adder uut (a, b, cin, sum, cout);
+
+
     
 endmodule
