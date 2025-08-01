@@ -1,0 +1,194 @@
+$date
+	Fri Aug 01 12:27:36 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module seven_segement_tb $end
+$var wire 7 ! seg [6:0] $end
+$var wire 1 " en $end
+$var wire 1 # dp $end
+$var reg 4 $ bin_in [3:0] $end
+$var reg 1 % blink_in $end
+$var reg 24 & blink_rate [23:0] $end
+$var reg 1 ' clk $end
+$var reg 1 ( dp_en $end
+$var reg 1 ) rst $end
+$scope module uut $end
+$var wire 4 * bin_in [3:0] $end
+$var wire 1 % blink_in $end
+$var wire 24 + blink_rate [23:0] $end
+$var wire 1 ' clk $end
+$var wire 1 ( dp_en $end
+$var wire 1 ) rst $end
+$var reg 24 , blink_counter [23:0] $end
+$var reg 1 - blink_state $end
+$var reg 1 # dp $end
+$var reg 1 " en $end
+$var reg 7 . seg [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1111110 .
+1-
+b0 ,
+b1010 +
+b0 *
+1)
+0(
+0'
+b1010 &
+0%
+b0 $
+1#
+1"
+b1111110 !
+$end
+#5
+1"
+b1111110 !
+b1111110 .
+1'
+#8
+0)
+#10
+0'
+#11
+b10 $
+b10 *
+#15
+b1101101 !
+b1101101 .
+1'
+#20
+0'
+#21
+1(
+#25
+0#
+1'
+#30
+0'
+#31
+1%
+#35
+b1 ,
+1'
+#40
+0'
+#45
+b10 ,
+1'
+#50
+0'
+#55
+b11 ,
+1'
+#60
+0'
+#61
+b101 $
+b101 *
+#65
+b100 ,
+b1011011 !
+b1011011 .
+1'
+#70
+0'
+#75
+b101 ,
+1'
+#80
+0'
+#85
+b110 ,
+1'
+#90
+0'
+#95
+b111 ,
+1'
+#100
+0'
+#105
+b1000 ,
+1'
+#110
+0'
+#111
+b110 &
+b110 +
+#115
+0-
+b0 ,
+1'
+#120
+0'
+#125
+0"
+b1 ,
+1'
+#130
+0'
+#135
+b10 ,
+1'
+#140
+0'
+#145
+b11 ,
+1'
+#150
+0'
+#155
+b100 ,
+1'
+#160
+0'
+#161
+0(
+0%
+#165
+1"
+1'
+#170
+0'
+#175
+1'
+#180
+0'
+#181
+b1001 $
+b1001 *
+#185
+b1111011 !
+b1111011 .
+1'
+#190
+0'
+#195
+1'
+#200
+0'
+#205
+1'
+#210
+0'
+#215
+1'
+#220
+0'
+#225
+1'
+#230
+0'
+#231

@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "seven_segement.v"
+
 module seven_segement_tb;
 
 reg clk, rst,  dp_en, blink_in;
