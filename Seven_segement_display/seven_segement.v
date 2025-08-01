@@ -7,6 +7,9 @@ output reg [6:0] seg ; // MSB- A, LSB- G
 output reg dp;
 output reg en; 
 
+reg [23:0] blink_counter = 0;
+reg blink_state = 1'b1;
+
 always @(posedge clk or posedge rst) begin
     if (rst) begin
         seg <= 7'b1111111;
@@ -31,9 +34,19 @@ always @(posedge clk or posedge rst) begin
         dp = 1'b0;
     end 
 
-    // else if (blink_en == 1'b1) begin
-
-    // end
+    if (blink_in == 1'b1) begin
+        if (blink_counter >= blink_rate) begin
+            blink_counter <= 0;
+            blink_state <= ~blink_state;
+        end else begin
+            blink_counter <= blink_counter + 1;
+        end
+        en <= blink_state;
+    end else begin
+        en <= 1'b1;  // always ON if blinking is disabled
+    end
 end
     
 endmodule
+
+
