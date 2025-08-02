@@ -1,12 +1,12 @@
 `timescale 1ns/1ns
 `include "ama4.v"
 
-module approx_adder_tb; 
+module ama4_tb; 
 
 reg a, b, cin;
 wire sum, cout;
 
-approx_adder uut (a, b, cin, sum, cout);
+ama4 uut (a, b, cin, sum, cout);
 
 initial begin
     $dumpfile("ama4.vcd");
