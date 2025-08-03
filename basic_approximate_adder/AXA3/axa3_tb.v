@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "axa3.v"
+
 module axa3_tb; 
 
 reg a, b, cin;
