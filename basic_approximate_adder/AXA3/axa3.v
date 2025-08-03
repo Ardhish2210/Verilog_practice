@@ -5,6 +5,5 @@ output sum, cout;
 
 assign sum = ~(a ^ b);
 assign cout = 0;
-
     
 endmodule
