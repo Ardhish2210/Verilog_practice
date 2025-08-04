@@ -1,3 +1,5 @@
+`include "full_adder.v"
+
 module carry_save_adder (A, B, C, SUM, COUT);
 
 input [3:0] A, B, C;
