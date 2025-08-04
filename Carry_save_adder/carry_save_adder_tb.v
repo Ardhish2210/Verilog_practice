@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "carry_save_adder.v"
+
 module carry_save_adder_tb; 
 
 reg [3:0] A, B, C;
