@@ -9,5 +9,7 @@ initial begin
   $dumpfile("carry_save_adder.vcd");
   $dumpvars(0, carry_save_adder_tb);
 
+  $monitor("Time: %0t || A: %04b || B: %04b || C: %04b || SUM: %04b || COUT: %04b", $time, A, B, C, SUM, COUT);
+
 end
 endmodule
