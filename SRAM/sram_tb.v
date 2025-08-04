@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "sram.v"
+
 module sram_tb; 
 
 reg clk;
