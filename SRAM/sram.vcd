@@ -1,0 +1,69 @@
+$date
+	Mon Aug 04 11:37:18 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module sram_tb $end
+$var wire 8 ! data_out [7:0] $end
+$var reg 8 " addr [7:0] $end
+$var reg 1 # clk $end
+$var reg 8 $ data_in [7:0] $end
+$var reg 1 % w_enable $end
+$scope module uut $end
+$var wire 8 & addr [7:0] $end
+$var wire 1 # clk $end
+$var wire 8 ' data_in [7:0] $end
+$var wire 1 % w_enable $end
+$var reg 8 ( data_out [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx (
+b0 '
+b0 &
+0%
+b0 $
+0#
+b0 "
+bx !
+$end
+#5
+1#
+#10
+0#
+b1111111 $
+b1111111 '
+b1 "
+b1 &
+#15
+1#
+#20
+0#
+1%
+#25
+1#
+#30
+0#
+b1111000 $
+b1111000 '
+b10 "
+b10 &
+0%
+#35
+1#
+#40
+0#
+1%
+#45
+1#
+#50
+0#
