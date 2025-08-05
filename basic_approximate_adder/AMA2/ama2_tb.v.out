@@ -1,0 +1,88 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000022b0c835d00 .scope module, "ama2_tb" "ama2_tb" 2 4;
+ .timescale -9 -9;
+v0000022b0c9ab9d0_0 .var "a", 0 0;
+v0000022b0c9aba70_0 .var "b", 0 0;
+v0000022b0c9abb10_0 .var "cin", 0 0;
+v0000022b0c9abbb0_0 .net "cout", 0 0, L_0000022b0c803640;  1 drivers
+v0000022b0c9abc50_0 .net "sum", 0 0, L_0000022b0c9a9b90;  1 drivers
+S_0000022b0c835e90 .scope module, "uut" "ama2" 2 9, 3 1 0, S_0000022b0c835d00;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000022b0c9a90b0 .functor XOR 1, v0000022b0c9ab9d0_0, v0000022b0c9aba70_0, C4<0>, C4<0>;
+L_0000022b0c9a9b90 .functor XOR 1, L_0000022b0c9a90b0, v0000022b0c9abb10_0, C4<0>, C4<0>;
+L_0000022b0c803640 .functor AND 1, v0000022b0c9ab9d0_0, v0000022b0c9aba70_0, C4<1>, C4<1>;
+v0000022b0c9a9af0_0 .net *"_ivl_0", 0 0, L_0000022b0c9a90b0;  1 drivers
+v0000022b0c803120_0 .net "a", 0 0, v0000022b0c9ab9d0_0;  1 drivers
+v0000022b0c9a9010_0 .net "b", 0 0, v0000022b0c9aba70_0;  1 drivers
+v0000022b0c836020_0 .net "cin", 0 0, v0000022b0c9abb10_0;  1 drivers
+v0000022b0c8360c0_0 .net "cout", 0 0, L_0000022b0c803640;  alias, 1 drivers
+v0000022b0c9ab930_0 .net "sum", 0 0, L_0000022b0c9a9b90;  alias, 1 drivers
+    .scope S_0000022b0c835d00;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "ama2.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000022b0c835d00 {0 0 0};
+    %vpi_call 2 15 "$monitor", "a: %0b || b: %0b || cin: %0b || sum: %0b || cout: %0b", v0000022b0c9ab9d0_0, v0000022b0c9aba70_0, v0000022b0c9abb10_0, v0000022b0c9abc50_0, v0000022b0c9abbb0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9ab9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9aba70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9abb10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9ab9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9aba70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9abb10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9ab9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9aba70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9abb10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9ab9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9aba70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9abb10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9ab9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9aba70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9abb10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022b0c9ab9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9aba70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022b0c9abb10_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "ama2_tb.v";
+    "./ama2.v";
