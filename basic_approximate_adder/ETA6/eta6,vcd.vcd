@@ -1,5 +1,5 @@
 $date
-	Thu Aug 07 02:48:10 2025
+	Thu Aug 07 02:51:55 2025
 $end
 $version
 	Icarus Verilog
@@ -19,9 +19,9 @@ $var wire 1 " COUT $end
 $var wire 1 ' sum_0 $end
 $var wire 1 ( sum_1 $end
 $var wire 1 ) sum_2 $end
-$var wire 1 * sum_3 $end
+$var wire 1 * sum_5 $end
 $var wire 1 + sum_4 $end
-$var wire 1 , sum_5 $end
+$var wire 1 , sum_3 $end
 $var wire 1 - carry_5 $end
 $var wire 1 . carry_4 $end
 $var wire 1 / carry_3 $end
@@ -31,14 +31,14 @@ $var wire 1 1 a $end
 $var wire 1 2 b $end
 $var wire 1 3 cin $end
 $var wire 1 / cout $end
-$var wire 1 * sum $end
+$var wire 1 , sum $end
 $upscope $end
 $scope module F2 $end
 $var wire 1 4 a $end
 $var wire 1 5 b $end
 $var wire 1 / cin $end
 $var wire 1 . cout $end
-$var wire 1 * sum $end
+$var wire 1 + sum $end
 $upscope $end
 $scope module F3 $end
 $var wire 1 6 a $end
@@ -62,12 +62,12 @@ $dumpvars
 03
 02
 01
-bz0000 0
+b0 0
 0/
 0.
 0-
-z,
-z+
+0,
+0+
 0*
 0)
 0(
@@ -77,15 +77,16 @@ b0 %
 b0 $
 b0 #
 0"
-bz0000 !
+b0 !
 $end
 #20
+1*
 1.
 1"
 1-
-x*
-bzx010 !
-bzx010 0
+1,
+b101010 !
+b101010 0
 1(
 15
 17
@@ -99,11 +100,14 @@ b111000 %
 #30
 0"
 0-
-bzx011 !
-bzx011 0
+0.
+1+
+1*
+b111011 !
+b111011 0
 1'
 12
-07
+05
 01
 06
 b101101 $
@@ -111,14 +115,18 @@ b101101 &
 b10110 #
 b10110 %
 #40
+1.
 1/
 1"
 1-
+1+
+0,
+1*
 0(
-bzx000 !
-bzx000 0
+b110000 !
+b110000 0
 0'
-17
+15
 11
 16
 b111111 $
