@@ -1,0 +1,55 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000220a18a2ce0 .scope module, "esa3" "esa3" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "a";
+    .port_info 1 /INPUT 8 "b";
+    .port_info 2 /OUTPUT 9 "sum";
+L_00000220a19db3d0 .functor XOR 3, L_00000220a191bf10, L_00000220a191be70, C4<000>, C4<000>;
+L_00000220a19d8ec0 .functor XOR 3, L_00000220a191c870, L_00000220a191c2d0, C4<000>, C4<000>;
+v00000220a19d8e20_0 .net *"_ivl_1", 2 0, L_00000220a191bf10;  1 drivers
+L_00000220a191d068 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v00000220a19dbd70_0 .net/2u *"_ivl_15", 0 0, L_00000220a191d068;  1 drivers
+v00000220a18a2e70_0 .net *"_ivl_18", 1 0, L_00000220a191bdd0;  1 drivers
+v00000220a18a2f10_0 .net *"_ivl_19", 2 0, L_00000220a191c4b0;  1 drivers
+L_00000220a191d0b0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v00000220a18a2fb0_0 .net/2u *"_ivl_21", 0 0, L_00000220a191d0b0;  1 drivers
+v00000220a191bd30_0 .net *"_ivl_24", 1 0, L_00000220a191c050;  1 drivers
+v00000220a191c5f0_0 .net *"_ivl_25", 2 0, L_00000220a191c550;  1 drivers
+v00000220a191c690_0 .net *"_ivl_27", 2 0, L_00000220a191c910;  1 drivers
+v00000220a191c0f0_0 .net *"_ivl_3", 2 0, L_00000220a191be70;  1 drivers
+v00000220a191caf0_0 .net *"_ivl_7", 2 0, L_00000220a191c870;  1 drivers
+v00000220a191cb90_0 .net *"_ivl_9", 2 0, L_00000220a191c2d0;  1 drivers
+o00000220a18d71e8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000220a191ca50_0 .net "a", 7 0, o00000220a18d71e8;  0 drivers
+o00000220a18d7218 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000220a191c7d0_0 .net "b", 7 0, o00000220a18d7218;  0 drivers
+v00000220a191c190_0 .net "carry_3", 0 0, L_00000220a191c370;  1 drivers
+v00000220a191c730_0 .net "sum", 8 0, L_00000220a191bc90;  1 drivers
+v00000220a191bfb0_0 .net "sum_1", 2 0, L_00000220a19db3d0;  1 drivers
+v00000220a191c230_0 .net "sum_2", 2 0, L_00000220a19d8ec0;  1 drivers
+v00000220a191c9b0_0 .net "sum_3", 1 0, L_00000220a191c410;  1 drivers
+L_00000220a191bf10 .part o00000220a18d71e8, 0, 3;
+L_00000220a191be70 .part o00000220a18d7218, 0, 3;
+L_00000220a191c870 .part o00000220a18d71e8, 3, 3;
+L_00000220a191c2d0 .part o00000220a18d7218, 3, 3;
+L_00000220a191c370 .part L_00000220a191c910, 2, 1;
+L_00000220a191c410 .part L_00000220a191c910, 0, 2;
+L_00000220a191bdd0 .part o00000220a18d71e8, 6, 2;
+L_00000220a191c4b0 .concat [ 2 1 0 0], L_00000220a191bdd0, L_00000220a191d068;
+L_00000220a191c050 .part o00000220a18d7218, 6, 2;
+L_00000220a191c550 .concat [ 2 1 0 0], L_00000220a191c050, L_00000220a191d0b0;
+L_00000220a191c910 .arith/sum 3, L_00000220a191c4b0, L_00000220a191c550;
+L_00000220a191bc90 .concat [ 3 3 2 1], L_00000220a19db3d0, L_00000220a19d8ec0, L_00000220a191c410, L_00000220a191c370;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "esa3.v";
