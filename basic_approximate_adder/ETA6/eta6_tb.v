@@ -10,6 +10,7 @@ wire COUT;
 eta6 uut (A, B, SUM, COUT);
 
 initial begin
+    
     $dumpfile("eta6,vcd");
     $dumpvars(0, eta6_tb);
 
