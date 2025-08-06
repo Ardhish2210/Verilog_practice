@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "esa3.v"
+
 module esa3_tb; 
 
 reg [7:0] a,b;
