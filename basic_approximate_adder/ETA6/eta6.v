@@ -1,3 +1,5 @@
+`include "full_adder.v"
+
 module eta6 (A, B, SUM, COUT);
 
 input [5:0] A, B;
@@ -11,11 +13,11 @@ assign sum_0 = A[0] ^ B[0];
 assign sum_1 = A[1] ^ B[1];
 assign sum_2 = A[2] ^ B[3]; 
 
-full_adder uut (.a(A[3]), .b(B[3]), .cin(1'b0), .sum(sum_3), .cout(carry_3));
-full_adder uut (.a(A[4]), .b(B[2]), .cin(carry_3), .sum(sum_3), .cout(carry_4));
-full_adder uut (.a(A[5]), .b(B[4]), .cin(carry_4), .sum(sum_3), .cout(carry_5));
+full_adder F1 (.a(A[3]), .b(B[3]), .cin(1'b0), .sum(sum_3), .cout(carry_3));
+full_adder F2 (.a(A[4]), .b(B[2]), .cin(carry_3), .sum(sum_3), .cout(carry_4));
+full_adder F3 (.a(A[5]), .b(B[4]), .cin(carry_4), .sum(sum_3), .cout(carry_5));
 
-assign SUM = {sum_5, sum_4, sum_3, sum_2, sum_1, sum_0}
+assign SUM = {sum_5, sum_4, sum_3, sum_2, sum_1, sum_0};
 assign COUT = carry_5;
 
 
