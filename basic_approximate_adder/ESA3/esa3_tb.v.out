@@ -1,0 +1,92 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001d32cd48fd0 .scope module, "esa3_tb" "esa3_tb" 2 4;
+ .timescale -9 -9;
+v000001d32cda2290_0 .var "a", 7 0;
+v000001d32cda21f0_0 .var "b", 7 0;
+v000001d32cda2650_0 .net "sum", 8 0, L_000001d32cdec750;  1 drivers
+S_000001d32cd49160 .scope module, "uut" "esa3" 2 9, 3 1 0, S_000001d32cd48fd0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 8 "a";
+    .port_info 1 /INPUT 8 "b";
+    .port_info 2 /OUTPUT 9 "sum";
+L_000001d32cd46a30 .functor XOR 3, L_000001d32cda1ed0, L_000001d32cda1c50, C4<000>, C4<000>;
+L_000001d32cd46800 .functor XOR 3, L_000001d32cda1f70, L_000001d32cda1930, C4<000>, C4<000>;
+v000001d32cd492f0_0 .net *"_ivl_1", 2 0, L_000001d32cda1ed0;  1 drivers
+L_000001d32cda2858 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001d32cd09e30_0 .net/2u *"_ivl_15", 0 0, L_000001d32cda2858;  1 drivers
+v000001d32cd0a3e0_0 .net *"_ivl_18", 1 0, L_000001d32cda1a70;  1 drivers
+v000001d32cd22d20_0 .net *"_ivl_19", 2 0, L_000001d32cda26f0;  1 drivers
+L_000001d32cda28a0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001d32cd22dc0_0 .net/2u *"_ivl_21", 0 0, L_000001d32cda28a0;  1 drivers
+v000001d32cda2150_0 .net *"_ivl_24", 1 0, L_000001d32cda2790;  1 drivers
+v000001d32cda2330_0 .net *"_ivl_25", 2 0, L_000001d32cdec390;  1 drivers
+v000001d32cda2010_0 .net *"_ivl_27", 2 0, L_000001d32cdeb210;  1 drivers
+v000001d32cda19d0_0 .net *"_ivl_3", 2 0, L_000001d32cda1c50;  1 drivers
+v000001d32cda1890_0 .net *"_ivl_7", 2 0, L_000001d32cda1f70;  1 drivers
+v000001d32cda2470_0 .net *"_ivl_9", 2 0, L_000001d32cda1930;  1 drivers
+v000001d32cda1b10_0 .net "a", 7 0, v000001d32cda2290_0;  1 drivers
+v000001d32cda1bb0_0 .net "b", 7 0, v000001d32cda21f0_0;  1 drivers
+v000001d32cda2510_0 .net "carry_3", 0 0, L_000001d32cda20b0;  1 drivers
+v000001d32cda25b0_0 .net "sum", 8 0, L_000001d32cdec750;  alias, 1 drivers
+v000001d32cda1d90_0 .net "sum_1", 2 0, L_000001d32cd46a30;  1 drivers
+v000001d32cda23d0_0 .net "sum_2", 2 0, L_000001d32cd46800;  1 drivers
+v000001d32cda1e30_0 .net "sum_3", 1 0, L_000001d32cda1cf0;  1 drivers
+L_000001d32cda1ed0 .part v000001d32cda2290_0, 0, 3;
+L_000001d32cda1c50 .part v000001d32cda21f0_0, 0, 3;
+L_000001d32cda1f70 .part v000001d32cda2290_0, 3, 3;
+L_000001d32cda1930 .part v000001d32cda21f0_0, 3, 3;
+L_000001d32cda20b0 .part L_000001d32cdeb210, 2, 1;
+L_000001d32cda1cf0 .part L_000001d32cdeb210, 0, 2;
+L_000001d32cda1a70 .part v000001d32cda2290_0, 6, 2;
+L_000001d32cda26f0 .concat [ 2 1 0 0], L_000001d32cda1a70, L_000001d32cda2858;
+L_000001d32cda2790 .part v000001d32cda21f0_0, 6, 2;
+L_000001d32cdec390 .concat [ 2 1 0 0], L_000001d32cda2790, L_000001d32cda28a0;
+L_000001d32cdeb210 .arith/sum 3, L_000001d32cda26f0, L_000001d32cdec390;
+L_000001d32cdec750 .concat [ 3 3 2 1], L_000001d32cd46a30, L_000001d32cd46800, L_000001d32cda1cf0, L_000001d32cda20b0;
+    .scope S_000001d32cd48fd0;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "esa3.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001d32cd48fd0 {0 0 0};
+    %vpi_call 2 15 "$monitor", "a: %08b || b: %08b || sum: %09b", v000001d32cda2290_0, v000001d32cda21f0_0, v000001d32cda2650_0 {0 0 0};
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v000001d32cda2290_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v000001d32cda21f0_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 8;
+    %store/vec4 v000001d32cda2290_0, 0, 8;
+    %pushi/vec4 4, 0, 8;
+    %store/vec4 v000001d32cda21f0_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 56, 0, 8;
+    %store/vec4 v000001d32cda2290_0, 0, 8;
+    %pushi/vec4 236, 0, 8;
+    %store/vec4 v000001d32cda21f0_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 204, 0, 8;
+    %store/vec4 v000001d32cda2290_0, 0, 8;
+    %pushi/vec4 179, 0, 8;
+    %store/vec4 v000001d32cda21f0_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 167, 0, 8;
+    %store/vec4 v000001d32cda2290_0, 0, 8;
+    %pushi/vec4 240, 0, 8;
+    %store/vec4 v000001d32cda21f0_0, 0, 8;
+    %delay 10, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "esa3_tb.v";
+    "./esa3.v";

@@ -1,0 +1,78 @@
+$date
+	Wed Aug 06 12:34:28 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module esa3_tb $end
+$var wire 9 ! sum [8:0] $end
+$var reg 8 " a [7:0] $end
+$var reg 8 # b [7:0] $end
+$scope module uut $end
+$var wire 8 $ a [7:0] $end
+$var wire 8 % b [7:0] $end
+$var wire 3 & sum_1 [2:0] $end
+$var wire 3 ' sum_2 [2:0] $end
+$var wire 2 ( sum_3 [1:0] $end
+$var wire 9 ) sum [8:0] $end
+$var wire 1 * carry_3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0*
+b0 )
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b101 !
+b101 )
+b101 &
+b100 #
+b100 %
+b1 "
+b1 $
+#20
+b11 (
+b100 &
+b11010100 !
+b11010100 )
+b10 '
+b11101100 #
+b11101100 %
+b111000 "
+b111000 $
+#30
+b111 &
+b111 '
+b1 (
+b101111111 !
+b101111111 )
+1*
+b10110011 #
+b10110011 %
+b11001100 "
+b11001100 $
+#40
+b101010111 !
+b101010111 )
+b10 '
+b11110000 #
+b11110000 %
+b10100111 "
+b10100111 $
+#50
