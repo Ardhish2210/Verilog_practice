@@ -12,7 +12,7 @@ initial begin
   $dumpfile("full_adder.vcd");
   $dumpvars(0, full_adder_tb);
 
-  $monitor("a: %0b || b: %0b || cin: %)b || sum: %0b || cout: %0b", a, b, cin, sum, cout);
+  $monitor("a: %0b || b: %0b || cin: %0b || sum: %0b || cout: %0b", a, b, cin, sum, cout);
 
   a = 0; b = 0; cin = 0;
 
