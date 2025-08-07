@@ -1,0 +1,95 @@
+$date
+	Fri Aug 08 02:26:40 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module scsa_tb $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " cout $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$scope module uut $end
+$var wire 4 % a [3:0] $end
+$var wire 4 & b [3:0] $end
+$var wire 1 " cout $end
+$var wire 4 ' sum [3:0] $end
+$var wire 1 ( c_2 $end
+$var wire 1 ) c_1 $end
+$scope module F1 $end
+$var wire 1 * a $end
+$var wire 1 + b $end
+$var wire 1 , cin $end
+$var wire 1 ) cout $end
+$var wire 1 - sum $end
+$upscope $end
+$scope module F2 $end
+$var wire 1 . a $end
+$var wire 1 / b $end
+$var wire 1 ) cin $end
+$var wire 1 ( cout $end
+$var wire 1 0 sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+0"
+b0 !
+$end
+#10
+1-
+10
+1+
+1/
+b1100 !
+b1100 '
+b1101 $
+b1101 &
+b11 #
+b11 %
+#20
+1)
+1"
+1(
+0-
+b1000 !
+b1000 '
+10
+1*
+1.
+b1111 #
+b1111 %
+#30
+00
+0)
+1-
+0+
+b111 !
+b111 '
+b1001 $
+b1001 &
+b1110 #
+b1110 %
+#40

@@ -1,4 +1,4 @@
-`include "full_addder.v"
+`include "full_adder.v"
 
 module scsa (a, b, sum, cout);
 
