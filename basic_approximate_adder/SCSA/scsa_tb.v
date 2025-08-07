@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "scsa.v"
+
 module scsa_tb;
 
 reg [3:0] a, b;
