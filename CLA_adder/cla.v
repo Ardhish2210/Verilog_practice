@@ -1,8 +1,9 @@
-module cla (a, b, sum, cin,cout);
+module cla (a, b, sum, cin, cout);
 
 input [3:0] a, b;
 input cin;
 output [3:0] sum;
+output cout;
 wire [3:0] P, G; // P = propagation carry, G = Generated carry
 wire [3:0] C;
 
