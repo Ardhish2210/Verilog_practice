@@ -22,7 +22,7 @@ logic: Introduced in SystemVerilog. It can replace both reg and wire and avoids 
 
 
 
-#### ***22. Explain the use of case, casex, and casez.***
+### ***22. Explain the use of case, casex, and casez.***
 
 
 
@@ -42,7 +42,7 @@ casez: Treats only Z as don't-care. Safer for synthesis and commonly used for ma
 
 
 
-#### ***23. Write a Verilog module for an edge-triggered D flip-flop with synchronous reset.***
+### ***23. Write a Verilog module for an edge-triggered D flip-flop with synchronous reset.***
 
 
 
@@ -104,7 +104,7 @@ endmodule.
 
 
 
-#### ***24. How do you model a finite state machine in Verilog?***
+### ***24. How do you model a finite state machine in Verilog?***
 
 
 
@@ -246,7 +246,7 @@ endmodule
 
 
 
-#### ***25. What is a blocking vs non-blocking assignment with an example?***
+### ***25. What is a blocking vs non-blocking assignment with an example?***
 
 
 
@@ -292,7 +292,7 @@ end
 
 
 
-#### ***26. What is the difference between simulation and synthesis?***
+### ***26. What is the difference between simulation and synthesis?***
 
 
 
@@ -308,7 +308,7 @@ Synthesis: Converts RTL code into gate-level hardware. Focuses on optimizing for
 
 
 
-#### ***27. What are X and Z values in simulation?***
+### ***27. What are X and Z values in simulation?***
 
 
 
@@ -324,7 +324,7 @@ Z (High Impedance): Represents tri-stated outputs, e.g., in bidirectional buses.
 
 
 
-#### ***28. Explain clock domain crossing (CDC) and how to handle it.***
+### ***28. Explain clock domain crossing (CDC) and how to handle it.***
 
 
 
@@ -352,7 +352,7 @@ CORRECT ANSWER: - \*\*Clock Domain Crossing (CDC)\*\*: Occurs when a signal tran
 
 
 
-#### ***29. How do you ensure reusability and modularity in RTL code?***
+### ***29. How do you ensure reusability and modularity in RTL code?***
 
 
 
@@ -378,7 +378,7 @@ Document the code: Add comments to describe module purpose, ports, and logic flo
 
 
 
-#### ***30. How do you write a testbench for a 4x1 multiplexer?***
+### ***30. How do you write a testbench for a 4x1 multiplexer?***
 
 
 
@@ -439,6 +439,7 @@ CORRECT ANSWER: module mux4x1\_tb;
 
 
 endmodule
+
 
 
 
