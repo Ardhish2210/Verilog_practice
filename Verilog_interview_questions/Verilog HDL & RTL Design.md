@@ -2,7 +2,7 @@
 
 
 
-##### ***21. What’s the difference between reg, wire, and logic in Verilog/SystemVerilog?***
+### ***21. What’s the difference between reg, wire, and logic in Verilog/SystemVerilog?***
 
 
 
@@ -439,6 +439,7 @@ CORRECT ANSWER: module mux4x1\_tb;
 
 
 endmodule
+
 
 
 
