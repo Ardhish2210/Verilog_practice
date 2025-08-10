@@ -7,129 +7,7 @@ Give one real-time example where this difference can break your design.
 ### 🔴 My Answer:
 Blocking assignment statements assign the value in SEQUENTIAL manner, whereas the NON-BLOCKING statement assign the value PARALLEL manner, Non- blocking assignment statements are commonly used in "sequential logic circuits" (always @(posedge clk) block). Real time example:
 
-```
-
----
-
-## **Question 4: What will be the output of this code?**
 ```verilog
-reg [3:0] a = 4'b0011;
-reg [3:0] b = 4'b0101;
-initial begin
-a = b & a;
-$display("%b", a);
-end
-```
-Is it synthesizable?
-
-### 🔴 My Answer:
-The above code will run perfectly and hence it will give display "0001" as output, but as far as the synthesis is concerned it will not synthesis as "initial block" and "$display" statements are ignored by the synthesis tool.
-
-### 🟢 Correct Answer:
-The output will be `0001`.
-
-**Step-by-step execution:**
-```verilog
-a = 4'b0011 (initial value)
-b = 4'b0101 (initial value)
-a = b & a = 4'b0101 & 4'b0011 = 4'b0001
-$display("%b", a) outputs: 0001
-```
-
-**Synthesizability:** This code is **NOT synthesizable** for several reasons:
-
-1. **`initial` blocks**: Generally not synthesizable (except for specific initialization cases in some tools)
-2. **`$display` statements**: System tasks are simulation-only, ignored by synthesis
-3. **Initialization values**: The `= 4'b0011` initialization may or may not be synthesizable depending on the target technology and synthesis tool
-
-**To make it synthesizable (if needed):**
-```verilog
-reg [3:0] a, b;
-wire [3:0] result;
-
-assign result = b & a;  // Combinational logic
-
-// Or in a clocked process:
-always @(posedge clk) begin
-    if (reset) begin
-        a <= 4'b0011;
-        b <= 4'b0101;
-    end else begin
-        a <= b & a;
-    end
-end
-```
-
----
-
-## **Question 5: Why always @(*) is preferred over always @ (a or b or c)?** 
-Explain the design advantage and simulator behavior.
-
-### 🔴 My Answer:
-always @(*) block signifies that whenever any of the inputs change the content of the always @(*) block is executed, but in case of "always @(a or b or c)" it might be possible that we must forget to add variable which is declared as an input but not mentioned in the "always @(a or b or c)" block, and hence the code will not give the desired output.
-
-### 🟢 Correct Answer:
-`always @(*)` is preferred over explicit sensitivity lists for combinational logic due to several important advantages:
-
-**1. Automatic sensitivity list generation:**
-```verilog
-// Manual sensitivity list - ERROR PRONE
-always @(a or b or c) begin
-    out1 = a & b;
-    out2 = c | d;  // 'd' missing from sensitivity list!
-end
-
-// Automatic sensitivity list - SAFE
-always @(*) begin
-    out1 = a & b;
-    out2 = c | d;  // All inputs automatically included
-end
-```
-
-**2. Design advantages:**
-- **Maintainability**: Automatically updates when code changes
-- **Error prevention**: Eliminates incomplete sensitivity list bugs
-- **Code clarity**: Intent is clearer (combinational logic)
-- **Reduced debugging**: No simulation/synthesis mismatches due to missing signals
-
-**3. Simulator behavior differences:**
-
-**Incomplete sensitivity list:**
-```verilog
-always @(a or b) begin  // 'c' missing
-    out = a & b & c;
-end
-// Simulation: out only updates when a or b change, not when c changes
-// Synthesis: Creates combinational logic sensitive to a, b, AND c
-// Result: Simulation/synthesis mismatch!
-```
-
-**Complete automatic sensitivity:**
-```verilog
-always @(*) begin
-    out = a & b & c;
-end
-// Simulation: out updates when any input (a, b, or c) changes
-// Synthesis: Creates combinational logic sensitive to a, b, and c
-// Result: Simulation matches synthesis perfectly
-```
-
-**4. Synthesis tool behavior:**
-- Both approaches synthesize to the same hardware
-- `always @(*)` prevents simulation/synthesis mismatches
-- Synthesis tools analyze the actual logic, not the sensitivity list
-
-**Best practices:**
-- Use `always @(*)` for all combinational logic
-- Use explicit sensitivity lists only for specific sequential logic (e.g., `always @(posedge clk)`)
-- Never mix `always @(*)` with clocked logic
-
----
-
-### 📝 **Legend:**
-- 🔴 **My Answer** - Initial response
-- 🟢 **Correct Answer** - Accurate technical solution
-- 🔷 **Key Points** - Important concepts to rememberverilog
 // Case-01
 always @(posedge clk) begin
  	a <= b;
@@ -316,3 +194,137 @@ end
 always @(*) begin
     b = a;  // Compilation error
 end
+```
+
+**Synthesis behavior:**
+- The `assign` statement creates a continuous connection between the `reg` output and `wire`
+- Synthesis tools interpret this as a direct connection/buffer
+- The `reg` acts as the driver, and `wire` is simply a net carrying the signal
+- In hardware, this typically results in no additional logic - just a connection
+
+**Key rules:**
+- `wire` can only be driven by `assign` statements or module instantiations
+- `reg` can be driven by procedural blocks (`always`, `initial`) or continuous assignments
+- Data types (`reg`/`wire`) don't determine hardware implementation - they determine how signals can be assigned
+
+---
+
+## **Question 4: What will be the output of this code?**
+```verilog
+reg [3:0] a = 4'b0011;
+reg [3:0] b = 4'b0101;
+initial begin
+a = b & a;
+$display("%b", a);
+end
+```
+Is it synthesizable?
+
+### 🔴 My Answer:
+The above code will run perfectly and hence it will give display "0001" as output, but as far as the synthesis is concerned it will not synthesis as "initial block" and "$display" statements are ignored by the synthesis tool.
+
+### 🟢 Correct Answer:
+The output will be `0001`.
+
+**Step-by-step execution:**
+```verilog
+a = 4'b0011 (initial value)
+b = 4'b0101 (initial value)
+a = b & a = 4'b0101 & 4'b0011 = 4'b0001
+$display("%b", a) outputs: 0001
+```
+
+**Synthesizability:** This code is **NOT synthesizable** for several reasons:
+
+1. **`initial` blocks**: Generally not synthesizable (except for specific initialization cases in some tools)
+2. **`$display` statements**: System tasks are simulation-only, ignored by synthesis
+3. **Initialization values**: The `= 4'b0011` initialization may or may not be synthesizable depending on the target technology and synthesis tool
+
+**To make it synthesizable (if needed):**
+```verilog
+reg [3:0] a, b;
+wire [3:0] result;
+
+assign result = b & a;  // Combinational logic
+
+// Or in a clocked process:
+always @(posedge clk) begin
+    if (reset) begin
+        a <= 4'b0011;
+        b <= 4'b0101;
+    end else begin
+        a <= b & a;
+    end
+end
+```
+
+---
+
+## **Question 5: Why always @(*) is preferred over always @ (a or b or c)?** 
+Explain the design advantage and simulator behavior.
+
+### 🔴 My Answer:
+always @(*) block signifies that whenever any of the inputs change the content of the always @(*) block is executed, but in case of "always @(a or b or c)" it might be possible that we must forget to add variable which is declared as an input but not mentioned in the "always @(a or b or c)" block, and hence the code will not give the desired output.
+
+### 🟢 Correct Answer:
+`always @(*)` is preferred over explicit sensitivity lists for combinational logic due to several important advantages:
+
+**1. Automatic sensitivity list generation:**
+```verilog
+// Manual sensitivity list - ERROR PRONE
+always @(a or b or c) begin
+    out1 = a & b;
+    out2 = c | d;  // 'd' missing from sensitivity list!
+end
+
+// Automatic sensitivity list - SAFE
+always @(*) begin
+    out1 = a & b;
+    out2 = c | d;  // All inputs automatically included
+end
+```
+
+**2. Design advantages:**
+- **Maintainability**: Automatically updates when code changes
+- **Error prevention**: Eliminates incomplete sensitivity list bugs
+- **Code clarity**: Intent is clearer (combinational logic)
+- **Reduced debugging**: No simulation/synthesis mismatches due to missing signals
+
+**3. Simulator behavior differences:**
+
+**Incomplete sensitivity list:**
+```verilog
+always @(a or b) begin  // 'c' missing
+    out = a & b & c;
+end
+// Simulation: out only updates when a or b change, not when c changes
+// Synthesis: Creates combinational logic sensitive to a, b, AND c
+// Result: Simulation/synthesis mismatch!
+```
+
+**Complete automatic sensitivity:**
+```verilog
+always @(*) begin
+    out = a & b & c;
+end
+// Simulation: out updates when any input (a, b, or c) changes
+// Synthesis: Creates combinational logic sensitive to a, b, and c
+// Result: Simulation matches synthesis perfectly
+```
+
+**4. Synthesis tool behavior:**
+- Both approaches synthesize to the same hardware
+- `always @(*)` prevents simulation/synthesis mismatches
+- Synthesis tools analyze the actual logic, not the sensitivity list
+
+**Best practices:**
+- Use `always @(*)` for all combinational logic
+- Use explicit sensitivity lists only for specific sequential logic (e.g., `always @(posedge clk)`)
+- Never mix `always @(*)` with clocked logic
+
+---
+
+### 📝 **Legend:**
+- 🔴 **My Answer** - Initial response
+- 🟢 **Correct Answer** - Accurate technical solution
+- 🔷 **Key Points** - Important concepts to remember
