@@ -1,27 +1,67 @@
-`timescale 1ns/1ns
+`timescale 1ns/1ps
 `include "eta6.v"
+
+// Exact 1-bit Full Adder definition for DUT's internal reference
+// module full_adder(input a, input b, input cin, output sum, output cout);
+//     assign {cout, sum} = a + b + cin;
+// endmodule
 
 module eta6_tb;
 
-reg [5:0] A, B;
-wire [5:0] SUM;
-wire COUT;
+    reg [5:0] A, B;
+    wire [5:0] SUM;
+    wire COUT;
 
-eta6 uut (A, B, SUM, COUT);
+    // DUT instance
+    eta6 uut (
+        .A(A),
+        .B(B),
+        .SUM(SUM),
+        .COUT(COUT)
+    );
 
-initial begin
-    
-    $dumpfile("eta6,vcd");
-    $dumpvars(0, eta6_tb);
+    integer total_cases = 0;
+    integer error_count = 0;
+    integer error_distance_sum = 0;
 
-    $monitor("A: %06b || B: %06b || SUM: %06b || COUT: %0b", A, B, SUM, COUT);
+    integer exact_val, approx_val, err_dist;
 
-    A = 6'b000000; B= 6'b000000;
-    #10 A = 6'b000000; B= 6'b000000;
-    #10 A = 6'b111000; B= 6'b110110;
-    #10 A = 6'b010110; B= 6'b101101;
-    #10 A = 6'b111111; B= 6'b111111;
+    initial begin
+        for (integer i = 0; i < 64; i = i + 1) begin
+            for (integer j = 0; j < 64; j = j + 1) begin
+                A = i;
+                B = j;
 
-    #10 $finish;
-end
+                #1; // allow propagation
+
+                // Exact 7-bit sum
+                exact_val  = A + B; 
+                // Approx value from DUT
+                approx_val = {COUT, SUM};
+
+                // Error distance
+                err_dist = (exact_val > approx_val) ?
+                           (exact_val - approx_val) :
+                           (approx_val - exact_val);
+
+                total_cases = total_cases + 1;
+                if (err_dist != 0) begin
+                    error_count = error_count + 1;
+                    error_distance_sum = error_distance_sum + err_dist;
+                end
+
+                // Uncomment below to see each case
+                // $display("A=%b B=%b | Exact=%07b Approx=%07b | ErrorDist=%0d",
+                //          A, B, exact_val, approx_val, err_dist);
+            end
+        end
+
+        $display("\nTotal Cases: %0d", total_cases);
+        $display("Error Count: %0d", error_count);
+        $display("Error Rate: %f%%", (error_count * 100.0) / total_cases);
+        $display("Mean Error Distance (MED): %f", error_distance_sum * 1.0 / total_cases);
+
+        $finish;
+    end
+
 endmodule
