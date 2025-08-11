@@ -1,25 +1,53 @@
-`timescale 1ns/1ns
+`timescale 1ns/1ps
 `include "esa3.v"
 
-module esa3_tb; 
+module esa3_tb;
 
-reg [7:0] a,b;
-wire [8:0] sum;
+    reg [7:0] a, b;
+    wire [8:0] approx_sum;
+    reg [8:0] exact_sum;
+    integer total_cases = 0;
+    integer error_count = 0;
+    integer error_distance_sum = 0;
+    integer err_dist;
 
-esa3 uut (a, b, sum);
+    // Instantiate DUT
+    esa3 uut (
+        .a(a),
+        .b(b),
+        .sum(approx_sum)
+    );
 
-initial begin
-    $dumpfile("esa3.vcd");
-    $dumpvars(0, esa3_tb);
+    initial begin
+        // Exhaustive testing for all 8-bit values of a and b
+        for (integer i = 0; i < 256; i = i + 1) begin
+            for (integer j = 0; j < 256; j = j + 1) begin
+                a = i;
+                b = j;
+                #1; // small delay for simulation update
 
-    $monitor("a: %08b || b: %08b || sum: %09b", a, b, sum);
+                exact_sum = a + b;
 
-    a = 8'b00000000; b = 8'b00000000;
-    #10 a = 8'b00000001; b = 8'b00000100;
-    #10 a = 8'b00111000; b = 8'b11101100;
-    #10 a = 8'b11001100; b = 8'b10110011;
-    #10 a = 8'b10100111; b = 8'b11110000;
+                err_dist = (exact_sum > approx_sum) ? 
+                           (exact_sum - approx_sum) : 
+                           (approx_sum - exact_sum);
 
-    #10 $finish;
-end
+                total_cases = total_cases + 1;
+
+                if (err_dist != 0) begin
+                    error_count = error_count + 1;
+                    error_distance_sum = error_distance_sum + err_dist;
+                end
+            end
+        end
+
+        // Print results
+        $display("Total Cases: %0d", total_cases);
+        $display("Error Count: %0d", error_count);
+        $display("Error Rate: %f%%", (error_count * 100.0) / total_cases);
+        $display("Mean Error Distance (MED): %f", error_distance_sum * 1.0 / total_cases);
+
+        $finish;
+    end
+
 endmodule
