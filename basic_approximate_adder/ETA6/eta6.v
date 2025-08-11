@@ -11,7 +11,7 @@ wire carry_3, carry_4, carry_5;
 
 assign sum_0 = A[0] ^ B[0];   
 assign sum_1 = A[1] ^ B[1];
-assign sum_2 = A[2] ^ B[3]; 
+assign sum_2 = A[2] ^ B[2]; 
 
 full_adder F1 (.a(A[3]), .b(B[3]), .cin(1'b0), .sum(sum_3), .cout(carry_3));
 full_adder F2 (.a(A[4]), .b(B[4]), .cin(carry_3), .sum(sum_4), .cout(carry_4));
