@@ -3,8 +3,9 @@
 
 ## Question 6: What is the difference between $display, $monitor and $strobe? Which is best used inside clocked blocks and why?
 
+
 ### 🔴 My Answer:
-$display: It is the statement which is only used to display the output of 1 test vector at a time ie In case of 4 test vectors we need to write the "$display" statement 4 times to display all the cases.</br> "$monitor": This statement is generally written before the test vectors are initialized and we need to right this statement only once in the whole testbench in order to display each and every test vectors written in the code. </br> "$strobe": I do not know about this statement.</br></br>
+$display: It is the statement which is only used to display the output of 1 test vector at a time ie In case of 4 test vectors we need to write the "$display" statement 4 times to display all the cases. </br> "$monitor": This statement is generally written before the test vectors are initialized and we need to right this statement only once in the whole testbench in order to display each and every test vectors written in the code.</br> "$strobe": I do not know about this statement. </br></br>
 "$monitor" will be the best used inside the clocked block because it is easy to right the statement once then writing it after each and every time after assigning a test vector.
 
 ### 🟢 Correct Answer:
@@ -72,42 +73,40 @@ endmodule
 ```
 
 ### 🟢 Correct Answer:
-The provided solution has a logical error. Here's the correct implementation:
-
-```verilog
-module majority_gate (a, b, c, out);
-    input a, b, c;
-    output out;
-    
-    // Method 1: Sum of Products (SOP)
-    assign out = (a & b) | (b & c) | (a & c);
-    
-    // Method 2: Alternative implementation
-    // assign out = (a & b) | (c & (a | b));
-    
-    // Method 3: Using reduction operators
-    // assign out = ((a + b + c) >= 2);
-    
-endmodule
-```
+**Your answer is completely correct!** The expression `(c & (a^b)) | (a&b)` is a clever and valid implementation of a 3-input majority gate.
 
 **Truth Table Verification:**
 ```
-a | b | c | out
---|---|---|----
-0 | 0 | 0 |  0
-0 | 0 | 1 |  0
-0 | 1 | 0 |  0
-0 | 1 | 1 |  1  ← majority (2 out of 3)
-1 | 0 | 0 |  0
-1 | 0 | 1 |  1  ← majority (2 out of 3)
-1 | 1 | 0 |  1  ← majority (2 out of 3)
-1 | 1 | 1 |  1  ← majority (3 out of 3)
+a | b | c | a^b | c&(a^b) | a&b | Final Output
+--|---|---|-----|--------|-----|------------
+0 | 0 | 0 |  0  |    0   |  0  |     0  ✓
+0 | 0 | 1 |  0  |    0   |  0  |     0  ✓
+0 | 1 | 0 |  1  |    0   |  0  |     0  ✓
+0 | 1 | 1 |  1  |    1   |  0  |     1  ✓ (2 out of 3)
+1 | 0 | 0 |  1  |    0   |  0  |     0  ✓
+1 | 0 | 1 |  1  |    1   |  0  |     1  ✓ (2 out of 3)
+1 | 1 | 0 |  0  |    0   |  1  |     1  ✓ (2 out of 3)
+1 | 1 | 1 |  0  |    0   |  1  |     1  ✓ (3 out of 3)
 ```
 
-**Error in original answer:** `(c & (a^b)) | (a&b)` incorrectly implements logic where output is 1 when:
-- a=b=1 (correct)
-- c=1 and a≠b (incorrect - should require at least 2 inputs to be 1)
+**Logic explanation:**
+- `(a&b)`: Covers cases where both a and b are 1
+- `(c & (a^b))`: Covers cases where c=1 and exactly one of a or b is 1
+- Together they cover all majority cases (≥2 inputs are 1)
+
+**Alternative implementations:**
+```verilog
+// Method 1: Standard SOP form
+assign out = (a & b) | (b & c) | (a & c);
+
+// Method 2: Your creative solution
+assign out = (c & (a^b)) | (a&b);
+
+// Method 3: Alternative form
+assign out = (a & b) | (c & (a | b));
+```
+
+Your solution demonstrates excellent logical thinking and understanding of Boolean algebra!
 
 ---
 
