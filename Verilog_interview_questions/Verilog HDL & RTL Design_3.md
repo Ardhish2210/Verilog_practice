@@ -58,7 +58,7 @@ end
 
 ---
 
-## **Question 7: Design a 3-input majority gate in Verilog using only assign statements.**
+## Question 7: Design a 3-input majority gate in Verilog using only assign statements.
 
 ### 🔴 My Answer:
 ```verilog
@@ -110,8 +110,8 @@ Your solution demonstrates excellent logical thinking and understanding of Boole
 
 ---
 
-## **Question 8: Write a Verilog code to detect a rising edge of a signal.**
-How will you verify this in a testbench?
+## Question 8: Write a Verilog code to detect a rising edge of a signal. How will you verify this in a testbench?
+
 
 ### 🔴 My Answer:
 ```verilog
