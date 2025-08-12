@@ -4,7 +4,7 @@
 ## Question 6: What is the difference between $display, $monitor and $strobe? Which is best used inside clocked blocks and why?
 
 ### 🔴 My Answer:
-$display: It is the statement which is only used to display the output of 1 test vector at a time ie In case of 4 test vectors we need to write the "$display" statement 4 times to display all the cases.</br> "$monitor": This statement is generally written before the test vectors are initialized and we need to right this statement only once in the whole testbench in order to display each and every test vectors written in the code. "$strobe": I do not know about this statement.
+$display: It is the statement which is only used to display the output of 1 test vector at a time ie In case of 4 test vectors we need to write the "$display" statement 4 times to display all the cases.</br> "$monitor": This statement is generally written before the test vectors are initialized and we need to right this statement only once in the whole testbench in order to display each and every test vectors written in the code. </br> "$strobe": I do not know about this statement.</br>
 "$monitor" will be the best used inside the clocked block because it is easy to right the statement once then writing it after each and every time after assigning a test vector.
 
 ### 🟢 Correct Answer:
