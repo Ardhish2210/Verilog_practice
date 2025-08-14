@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "tri_state_buuffer.v"
+
 module tri_state_buffer_tb;
 
 reg [1:0] sel;
