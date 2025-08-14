@@ -12,7 +12,7 @@ priority_encoder_new uut (d, out, valid);
 initial begin
 
     $dumpfile("priority_encoder_new.vcd");
-    $dumpvars(0, priority_encoder_tb);
+    $dumpvars(0, priority_encoder_new_tb);
 
     $monitor("valid: %0b || d: %08b || out: %03b", valid, d, out);
 
