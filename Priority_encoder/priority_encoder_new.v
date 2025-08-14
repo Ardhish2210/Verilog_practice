@@ -12,6 +12,8 @@ always @(*) begin
                 out = i;
             end
         end
+    end else begin
+      out = 3'b000;
     end
 end
 
