@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "tri_state_buuffer.v"
+`include "tri_state_buffer.v"
 
 module tri_state_buffer_tb;
 

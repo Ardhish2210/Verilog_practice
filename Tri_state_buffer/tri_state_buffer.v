@@ -8,6 +8,10 @@ output reg bus_line;
 reg [3:0] d;
 
 always @(*) begin
+
+    d = 4'b0000; // reset decoders output
+    bus_line = 1'bz;
+
     if (enable) begin
         case (sel)
         2'b00: begin
