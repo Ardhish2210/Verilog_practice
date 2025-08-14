@@ -12,6 +12,8 @@ mux uut (.a(a), .sel(sel), .out(out));
 initial begin 
     $monitor("a: %0b || sel: %0d || out: %0b", a, sel, out);
 
+    a = 4'b0000; sel = 2'b00;
+
     #3 a = 4'b1010; sel = 2'b00;
     #3 a = 4'b1010; sel = 2'b01;
     #3 a = 4'b1010; sel = 2'b10;

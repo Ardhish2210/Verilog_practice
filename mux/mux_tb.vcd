@@ -1,5 +1,5 @@
 $date
-	Fri Jun 27 22:57:24 2025
+	Thu Aug 14 09:39:34 2025
 $end
 $version
 	Icarus Verilog
@@ -23,16 +23,13 @@ $dumpall
 $end
 #0
 $dumpvars
-bx %
-bx $
-bx #
-bx "
-x!
+b0 %
+b0 $
+b0 #
+b0 "
+0!
 $end
 #3
-0!
-b0 #
-b0 %
 b1010 "
 b1010 $
 #6
@@ -47,4 +44,4 @@ b10 %
 1!
 b11 #
 b11 %
-#14
+#18
