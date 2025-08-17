@@ -1,6 +1,6 @@
 module one_hot_encoder (a, out);
 
-input [3:0] a;
+input [2:0] a;
 output reg [7:0] out;
 
 always @(*) begin
