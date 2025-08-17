@@ -962,4 +962,144 @@ always @(*) begin
     else  
         out = input0;
 end
-// Synthesizes to: 2
+// Synthesizes to: 2:1 MUX
+```
+
+**Case with Don't Cares → Optimized Logic:**
+```verilog
+always @(*) begin
+    casex (opcode)
+        4'b00xx: out = alu_add;     // Any 00xx pattern
+        4'b01xx: out = alu_sub;     // Any 01xx pattern  
+        4'b1xxx: out = alu_logic;   // Any 1xxx pattern
+        default: out = 8'h00;
+    endcase
+end
+// Synthesizes to: Simplified decoder with reduced logic
+```
+
+**4. When Each is Preferred:**
+
+**Use If-Else when:**
+- Natural priority is needed
+- Conditions are not mutually exclusive
+- Range checking or comparisons
+- Few conditions (< 4)
+
+```verilog
+// Priority interrupt controller
+always @(*) begin
+    if (interrupt[7])      vector = 8'h07;  // Highest
+    else if (interrupt[6]) vector = 8'h06;
+    else if (interrupt[5]) vector = 8'h05;
+    // ... continues with decreasing priority
+    else                   vector = 8'h00;  // No interrupt
+end
+```
+
+**Use Case when:**
+- All conditions are mutually exclusive
+- Decode operations (opcodes, states)
+- Many conditions (> 4)
+- Want parallel evaluation
+
+```verilog
+// CPU instruction decoder
+always @(*) begin
+    case (opcode[6:4])
+        3'b000: alu_op = ADD;
+        3'b001: alu_op = SUB;
+        3'b010: alu_op = AND;
+        3'b011: alu_op = OR;
+        3'b100: alu_op = XOR;
+        3'b101: alu_op = SHL;
+        3'b110: alu_op = SHR;
+        3'b111: alu_op = NOP;
+    endcase
+end
+```
+
+**5. Synthesis Tool Optimizations:**
+
+**Smart If-Else → Mux Tree:**
+```verilog
+// Balanced if-else tree
+always @(*) begin
+    if (sel[1]) begin
+        if (sel[0]) out = d;  // 11
+        else        out = c;  // 10
+    end else begin
+        if (sel[0]) out = b;  // 01
+        else        out = a;  // 00
+    end
+end
+// Synthesizes to: Balanced mux tree (same as case)
+```
+
+**Case with Overlapping Conditions:**
+```verilog
+// Synthesis warning: overlapping cases
+always @(*) begin
+    case (data)
+        4'b00xx: out = low_range;
+        4'b0001: out = special_case;  // Conflicts with above
+        default: out = other;
+    endcase
+end
+```
+
+**6. Complex Examples:**
+
+**State Machine Decoder:**
+```verilog
+// Case preferred for state machines
+always @(*) begin
+    case (current_state)
+        IDLE:   next_state = start ? ACTIVE : IDLE;
+        ACTIVE: next_state = done ? COMPLETE : ACTIVE;
+        COMPLETE: next_state = ack ? IDLE : COMPLETE;
+        default: next_state = IDLE;
+    endcase
+end
+```
+
+**Address Range Decoder:**
+```verilog
+// If-else preferred for range checking
+always @(*) begin
+    if (addr >= 32'h0000_0000 && addr < 32'h0000_1000)
+        chip_select = MEM_ROM;
+    else if (addr >= 32'h0000_1000 && addr < 32'h0000_2000)  
+        chip_select = MEM_RAM;
+    else if (addr >= 32'h1000_0000 && addr < 32'h2000_0000)
+        chip_select = MEM_PERIPH;
+    else
+        chip_select = MEM_NONE;
+end
+```
+
+**7. Resource Utilization:**
+
+**LUT Usage Comparison:**
+```verilog
+// 8:1 Mux using if-else (priority)
+// LUTs: ~8-12 (depending on architecture)
+// Levels: 3-4
+
+// 8:1 Mux using case (parallel)  
+// LUTs: ~8 (more efficient)
+// Levels: 2-3
+```
+
+**Summary:**
+- **If-else:** Creates priority logic, good for few conditions, natural for ranges
+- **Case:** Creates parallel decode logic, efficient for many equal-priority conditions
+- **Tool optimization:** Modern synthesis tools can optimize both to similar structures when appropriate
+- **Choice depends on:** Logic requirements, timing constraints, and intended functionality
+
+---
+
+### 📝 **Legend:**
+- 🔴 **My Answer** - Initial response  
+- 🟢 **Correct Answer** - Accurate technical solution
+- 🔷 **Key Points** - Important concepts to remember
