@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "one_hot_encoder.v"
+
 module one_hot_encoder_tb;
 
 reg [2:0] a;
