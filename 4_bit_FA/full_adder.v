@@ -5,8 +5,13 @@ module full_adder(a, b, cin, sum, cout);
 input a, b, cin;
 output sum, cout;
 
-wire w1, w2, w3;
+wire w1, w2, w3, w4, w5;
 
 xor x1 (w1, a, b);
 xor x2 (sum, w1, cin);
+and x3 (w2, a, b);
+and x4 (w3, b, cin);
+and x5 (w4, cin, a);
+or x6 (cout, w2, w3, w4);
+
 endmodule
