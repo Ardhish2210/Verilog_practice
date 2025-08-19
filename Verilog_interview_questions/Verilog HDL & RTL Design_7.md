@@ -26,9 +26,9 @@ module trail (a,out);
 always @(*) begin
   if (a = 1'b1) begin
     out = 1'b0;
-end else begin
+  end else begin
     out = 1'b1;
-end
+  end
 endmodule
 ```
 
