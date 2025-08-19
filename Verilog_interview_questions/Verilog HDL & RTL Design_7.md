@@ -12,9 +12,10 @@ IN THE BELOW WRITTEN CODE THERE WILL BE LATCH INFERRED
 module trail (a,out);
 
 always @(*) begin
-if (a = 1'b1) out = 1'b0;
+  if (a = 1'b1) out = 1'b0;
 end
-module
+
+endmodule
 ```
 
 TO AVOID LATCH IN IF ELSE STATEMENT ALWAYS WRITE "ELSE" CONDITION AS WELL.
@@ -24,12 +25,11 @@ module trail (a,out);
 
 always @(*) begin
   if (a = 1'b1) begin
-out = 1'b0;
-end;
+    out = 1'b0;
 end else begin
-out = 1'b1;
+    out = 1'b1;
 end
-module
+endmodule
 ```
 
 In case of "case" statements always write the default statement as well, otherwise there are chance of latch creation.
