@@ -1,0 +1,81 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001b5ab56a360 .scope module, "decoder_tb" "decoder_tb" 2 4;
+ .timescale -9 -9;
+v000001b5ab568330_0 .var "a", 1 0;
+v000001b5ab568830_0 .net "out", 3 0, L_000001b5ab5c0450;  1 drivers
+S_000001b5ab542d20 .scope module, "uut" "decoder" 2 9, 3 1 0, S_000001b5ab56a360;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /OUTPUT 4 "out";
+L_000001b5ab56a4f0 .functor NOT 1, L_000001b5ab568e70, C4<0>, C4<0>, C4<0>;
+L_000001b5ab5435b0 .functor NOT 1, L_000001b5ab568470, C4<0>, C4<0>, C4<0>;
+L_000001b5ab529c00 .functor AND 1, L_000001b5ab56a4f0, L_000001b5ab5435b0, C4<1>, C4<1>;
+L_000001b5ab52eee0 .functor NOT 1, L_000001b5ab5c0db0, C4<0>, C4<0>, C4<0>;
+L_000001b5ab52ef50 .functor AND 1, L_000001b5ab52eee0, L_000001b5ab5c0ef0, C4<1>, C4<1>;
+L_000001b5ab52c100 .functor NOT 1, L_000001b5ab5c1b70, C4<0>, C4<0>, C4<0>;
+L_000001b5ab5c2500 .functor AND 1, L_000001b5ab5c13f0, L_000001b5ab52c100, C4<1>, C4<1>;
+L_000001b5ab5c2260 .functor AND 1, L_000001b5ab5c1490, L_000001b5ab5c09f0, C4<1>, C4<1>;
+v000001b5ab568650_0 .net *"_ivl_10", 0 0, L_000001b5ab529c00;  1 drivers
+v000001b5ab5683d0_0 .net *"_ivl_15", 0 0, L_000001b5ab5c0db0;  1 drivers
+v000001b5ab568510_0 .net *"_ivl_16", 0 0, L_000001b5ab52eee0;  1 drivers
+v000001b5ab5686f0_0 .net *"_ivl_19", 0 0, L_000001b5ab5c0ef0;  1 drivers
+v000001b5ab568970_0 .net *"_ivl_20", 0 0, L_000001b5ab52ef50;  1 drivers
+v000001b5ab5680b0_0 .net *"_ivl_25", 0 0, L_000001b5ab5c13f0;  1 drivers
+v000001b5ab568bf0_0 .net *"_ivl_27", 0 0, L_000001b5ab5c1b70;  1 drivers
+v000001b5ab568150_0 .net *"_ivl_28", 0 0, L_000001b5ab52c100;  1 drivers
+v000001b5ab568ab0_0 .net *"_ivl_3", 0 0, L_000001b5ab568e70;  1 drivers
+v000001b5ab568a10_0 .net *"_ivl_30", 0 0, L_000001b5ab5c2500;  1 drivers
+v000001b5ab568f10_0 .net *"_ivl_36", 0 0, L_000001b5ab5c1490;  1 drivers
+v000001b5ab568fb0_0 .net *"_ivl_38", 0 0, L_000001b5ab5c09f0;  1 drivers
+v000001b5ab568c90_0 .net *"_ivl_39", 0 0, L_000001b5ab5c2260;  1 drivers
+v000001b5ab568b50_0 .net *"_ivl_4", 0 0, L_000001b5ab56a4f0;  1 drivers
+v000001b5ab568d30_0 .net *"_ivl_7", 0 0, L_000001b5ab568470;  1 drivers
+v000001b5ab5681f0_0 .net *"_ivl_8", 0 0, L_000001b5ab5435b0;  1 drivers
+v000001b5ab568dd0_0 .net "a", 1 0, v000001b5ab568330_0;  1 drivers
+v000001b5ab568790_0 .net "out", 3 0, L_000001b5ab5c0450;  alias, 1 drivers
+L_000001b5ab568e70 .part v000001b5ab568330_0, 1, 1;
+L_000001b5ab568470 .part v000001b5ab568330_0, 0, 1;
+L_000001b5ab5c0db0 .part v000001b5ab568330_0, 1, 1;
+L_000001b5ab5c0ef0 .part v000001b5ab568330_0, 0, 1;
+L_000001b5ab5c13f0 .part v000001b5ab568330_0, 1, 1;
+L_000001b5ab5c1b70 .part v000001b5ab568330_0, 0, 1;
+L_000001b5ab5c0450 .concat8 [ 1 1 1 1], L_000001b5ab529c00, L_000001b5ab52ef50, L_000001b5ab5c2500, L_000001b5ab5c2260;
+L_000001b5ab5c1490 .part v000001b5ab568330_0, 1, 1;
+L_000001b5ab5c09f0 .part v000001b5ab568330_0, 0, 1;
+    .scope S_000001b5ab56a360;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "decoder.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001b5ab56a360 {0 0 0};
+    %vpi_call 2 16 "$monitor", "a: %b || out: %b", v000001b5ab568330_0, v000001b5ab568830_0 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000001b5ab568330_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000001b5ab568330_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000001b5ab568330_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000001b5ab568330_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000001b5ab568330_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "decoder_tb.v";
+    "./decoder.v";
