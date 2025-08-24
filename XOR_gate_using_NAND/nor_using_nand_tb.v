@@ -3,5 +3,8 @@
 
 module xor_using_nand_tb;
 
+reg a, b;
+wire y;
+
 
 endmodule
