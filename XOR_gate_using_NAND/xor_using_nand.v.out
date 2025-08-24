@@ -1,0 +1,31 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002209adb2df0 .scope module, "xor_using_nand" "xor_using_nand" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+o000002209ade6fd8 .functor BUFZ 1, C4<z>; HiZ drive
+o000002209ade7008 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002209adb34c0 .functor NAND 1, o000002209ade6fd8, o000002209ade7008, C4<1>, C4<1>;
+L_000002209adb3620 .functor NAND 1, o000002209ade6fd8, L_000002209adb34c0, C4<1>, C4<1>;
+L_000002209adb3780 .functor NAND 1, L_000002209adb34c0, o000002209ade7008, C4<1>, C4<1>;
+L_000002209af4e320 .functor NAND 1, L_000002209adb3780, L_000002209adb3620, C4<1>, C4<1>;
+v000002209adb2f80_0 .net "a", 0 0, o000002209ade6fd8;  0 drivers
+v000002209adb3020_0 .net "b", 0 0, o000002209ade7008;  0 drivers
+v000002209adb30c0_0 .net "d", 0 0, L_000002209adb34c0;  1 drivers
+v000002209af4e140_0 .net "e", 0 0, L_000002209adb3620;  1 drivers
+v000002209af4e1e0_0 .net "f", 0 0, L_000002209adb3780;  1 drivers
+v000002209af4e280_0 .net "y", 0 0, L_000002209af4e320;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "xor_using_nand.v";
