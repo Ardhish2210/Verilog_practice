@@ -1,6 +1,6 @@
 module siso (clk, rst, sin, sout);
 
-input alk, rst, sin;
+input clk, rst, sin;
 output sout; 
 
 reg [3:0] shift_reg;
