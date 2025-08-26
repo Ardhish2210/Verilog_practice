@@ -1,7 +1,7 @@
 module pulse (clk, rst, in_pulse, out_pulse);
 
 input clk, rst, in_pulse;
-output out_pulse;
+output reg out_pulse;
 
 always @(posedge clk or posedge rst) begin
     if (rst) begin
