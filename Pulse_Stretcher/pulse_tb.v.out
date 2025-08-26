@@ -7,65 +7,67 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_0000022028326220 .scope module, "pulse_tb" "pulse_tb" 2 4;
+S_0000025c020567c0 .scope module, "pulse_tb" "pulse_tb" 2 4;
  .timescale -9 -9;
-v0000022028323db0_0 .var "clk", 0 0;
-v0000022028323e50_0 .var "in_pulse", 0 0;
-v0000022028324700_0 .net "out_pulse", 0 0, v00000220282dbd60_0;  1 drivers
-v00000220283247a0_0 .var "rst", 0 0;
-S_00000220283263b0 .scope module, "uut" "pulse" 2 9, 3 1 0, S_0000022028326220;
+v0000025c02053f80_0 .var "clk", 0 0;
+v0000025c02053260_0 .var "in_pulse", 0 0;
+v0000025c02053300_0 .net "out_pulse", 0 0, v0000025c02053a80_0;  1 drivers
+v0000025c020536c0_0 .var "rst", 0 0;
+S_0000025c02056950 .scope module, "uut" "pulse" 2 9, 3 1 0, S_0000025c020567c0;
  .timescale -9 -9;
     .port_info 0 /INPUT 1 "clk";
     .port_info 1 /INPUT 1 "rst";
     .port_info 2 /INPUT 1 "in_pulse";
     .port_info 3 /OUTPUT 1 "out_pulse";
-v00000220282d9340_0 .net "clk", 0 0, v0000022028323db0_0;  1 drivers
-v00000220282f3140_0 .net "in_pulse", 0 0, v0000022028323e50_0;  1 drivers
-v00000220282dbd60_0 .var "out_pulse", 0 0;
-v0000022028323d10_0 .net "rst", 0 0, v00000220283247a0_0;  1 drivers
-E_00000220282dcc60 .event posedge, v0000022028323d10_0, v00000220282d9340_0;
-    .scope S_00000220283263b0;
+v0000025c02199280_0 .net "clk", 0 0, v0000025c02053f80_0;  1 drivers
+v0000025c02053c60_0 .net "in_pulse", 0 0, v0000025c02053260_0;  1 drivers
+v0000025c02053a80_0 .var "out_pulse", 0 0;
+v0000025c02053580_0 .net "rst", 0 0, v0000025c020536c0_0;  1 drivers
+E_0000025c0219c700 .event posedge, v0000025c02053580_0, v0000025c02199280_0;
+    .scope S_0000025c02056950;
 T_0 ;
-    %wait E_00000220282dcc60;
-    %load/vec4 v0000022028323d10_0;
+    %wait E_0000025c0219c700;
+    %load/vec4 v0000025c02053580_0;
     %flag_set/vec4 8;
     %jmp/0xz  T_0.0, 8;
     %pushi/vec4 0, 0, 1;
-    %assign/vec4 v00000220282dbd60_0, 0;
+    %assign/vec4 v0000025c02053a80_0, 0;
     %jmp T_0.1;
 T_0.0 ;
-    %load/vec4 v00000220282f3140_0;
-    %assign/vec4 v00000220282dbd60_0, 0;
+    %load/vec4 v0000025c02053c60_0;
+    %assign/vec4 v0000025c02053a80_0, 5;
 T_0.1 ;
     %jmp T_0;
     .thread T_0;
-    .scope S_0000022028326220;
+    .scope S_0000025c020567c0;
 T_1 ;
     %vpi_call 2 12 "$dumpfile", "pulse.vcd" {0 0 0};
-    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000022028326220 {0 0 0};
-    %vpi_call 2 15 "$monitor", "Time: %0t || clk: %b || rst: %b || in_pulse: %b || out_pulse: %b", $time, v0000022028323db0_0, v00000220283247a0_0, v0000022028323e50_0, v0000022028324700_0 {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000025c020567c0 {0 0 0};
+    %vpi_call 2 15 "$monitor", "Time: %0t || clk: %b || rst: %b || in_pulse: %b || out_pulse: %b", $time, v0000025c02053f80_0, v0000025c020536c0_0, v0000025c02053260_0, v0000025c02053300_0 {0 0 0};
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000022028323db0_0, 0, 1;
+    %store/vec4 v0000025c02053f80_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000022028323e50_0, 0, 1;
+    %store/vec4 v0000025c02053260_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v00000220283247a0_0, 0, 1;
+    %store/vec4 v0000025c020536c0_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v00000220283247a0_0, 0, 1;
+    %store/vec4 v0000025c020536c0_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0000022028323e50_0, 0, 1;
-    %delay 5, 0;
-    %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000022028323e50_0, 0, 1;
-    %delay 5, 0;
-    %pushi/vec4 1, 0, 1;
-    %store/vec4 v0000022028323e50_0, 0, 1;
-    %delay 100, 0;
+    %store/vec4 v0000025c02053260_0, 0, 1;
+    %delay 10, 0;
     %vpi_call 2 26 "$finish" {0 0 0};
     %end;
     .thread T_1;
+    .scope S_0000025c020567c0;
+T_2 ;
+    %delay 5, 0;
+    %load/vec4 v0000025c02053f80_0;
+    %inv;
+    %store/vec4 v0000025c02053f80_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";
