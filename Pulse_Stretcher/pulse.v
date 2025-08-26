@@ -15,7 +15,7 @@ always @(posedge clk or posedge rst) begin
             counter <= stretch_length;
         end else if (counter != 0) begin
             out_pulse <= 1'b1;
-            counter <= counter + 1;
+            counter <= counter - 1;
         end else begin
             out_pulse <= 1'b0;  
         end

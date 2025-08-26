@@ -17,13 +17,17 @@ initial begin
     clk = 0;
     in_pulse = 0;
     rst = 1;
-    #10 rst = 0;
+    #12 rst = 0;
 
-    #5 in_pulse = 1;
-    #5 in_pulse = 0;
-    // #5 in_pulse = 1;
+    #10 in_pulse = 1;
+    #10 in_pulse = 0;
 
-    #40 $finish;
+    #100;
+
+    #20 in_pulse = 1;
+    #10 in_pulse = 0;
+
+    #100 $finish;
 
 end
 
