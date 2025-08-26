@@ -20,10 +20,10 @@ initial begin
     #10 rst = 0;
 
     #5 in_pulse = 1;
-    // #5 in_pulse = 0;
+    #5 in_pulse = 0;
     // #5 in_pulse = 1;
 
-    #10 $finish;
+    #40 $finish;
 
 end
 

@@ -1,5 +1,5 @@
 $date
-	Tue Aug 26 14:13:42 2025
+	Tue Aug 26 14:24:25 2025
 $end
 $version
 	Icarus Verilog
@@ -16,15 +16,19 @@ $scope module uut $end
 $var wire 1 " clk $end
 $var wire 1 # in_pulse $end
 $var wire 1 $ rst $end
+$var parameter 32 % stretch_length $end
+$var reg 4 & counter [3:0] $end
 $var reg 1 ! out_pulse $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
+b1000 %
 $end
 #0
 $dumpvars
+b0 &
 1$
 0#
 0"
@@ -36,10 +40,30 @@ $end
 0"
 0$
 #15
+b1000 &
+1!
 1"
 1#
 #20
-1!
 0"
+0#
 #25
+b1001 &
 1"
+#30
+0"
+#35
+b1010 &
+1"
+#40
+0"
+#45
+b1011 &
+1"
+#50
+0"
+#55
+b1100 &
+1"
+#60
+0"
