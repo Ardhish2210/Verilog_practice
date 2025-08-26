@@ -20,11 +20,13 @@ initial begin
     #10 rst = 0;
 
     #5 in_pulse = 1;
-    #5 in_pulse = 0;
-    #5 in_pulse = 1;
+    // #5 in_pulse = 0;
+    // #5 in_pulse = 1;
 
-    #100 $finish;
+    #10 $finish;
 
 end
+
+always #5 clk = ~clk;
 
 endmodule
