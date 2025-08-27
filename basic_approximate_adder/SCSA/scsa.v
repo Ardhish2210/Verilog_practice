@@ -1,5 +1,6 @@
 `include "full_adder.v"
 
+
 module scsa (a, b, sum, cout);
 
 input [3:0] a, b;
