@@ -1,0 +1,31 @@
+$date
+	Thu Aug 28 13:05:52 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module pwm_tb $end
+$var wire 1 ! pwm_out $end
+$var reg 1 " clk $end
+$var reg 8 # duty_cycle [7:0] $end
+$var reg 1 $ rst $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1$
+b0 #
+0"
+z!
+$end
+#8
+0$
+#13
+b111100 #
+#113
