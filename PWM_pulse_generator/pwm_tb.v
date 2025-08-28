@@ -7,6 +7,8 @@ reg clk, rst;
 reg [7:0] duty_cycle;
 wire pwm_out;
 
+pwm uut (clk, rst, duty_cycle, pwm_out);
+
 initial begin 
 
     $dumpfile("pwm.vcd");
@@ -27,7 +29,9 @@ initial begin
     #10 duty_cycle = 60;
     #10 duty_cycle = 60;
 
-    #10 $finish;
+    #3000 $finish;
 end
-    
+
+always #5 clk = ~clk;
+
 endmodule
