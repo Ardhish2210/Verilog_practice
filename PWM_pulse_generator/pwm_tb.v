@@ -18,11 +18,16 @@ initial begin
     duty_cycle = 0;
     rst = 1'b1;
 
-    #8 rst = 1'b0;
+    #5 rst = 1'b0;
 
     #5 duty_cycle = 60;
+    #10 duty_cycle = 60;
+    #10 duty_cycle = 60;
+    #10 duty_cycle = 60;
+    #10 duty_cycle = 60;
+    #10 duty_cycle = 60;
 
-    #100 $finish;
+    #10 $finish;
 end
     
 endmodule
