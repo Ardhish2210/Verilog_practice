@@ -1,4 +1,4 @@
-# 🔧 Verilog_practice
+# 🔧 Verilog practice
 
 > **Building Digital Dreams, One Module at a Time** ⚡
 
