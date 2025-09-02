@@ -1,6 +1,5 @@
 `timescale 1ns/1ns
 `include "majority_gate.v"
-
 module majority_gate_tb;
 
 reg a, b, c;
