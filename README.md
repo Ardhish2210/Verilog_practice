@@ -2,7 +2,7 @@
 
 > **Building Digital Dreams, One Module at a Time** ⚡
 
-Welcome to my Verilog learning laboratory! This repository chronicles my journey through the fascinating world of hardware description languages and digital desig
+Welcome to my Verilog learning laboratory! This repository chronicles my journey through the fascinating world of hardware description languages and digital design.
 
 ## 🎯 What's Inside
 
