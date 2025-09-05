@@ -1,11 +1,11 @@
-`include "full_adder"
+`include "full_adder.v"
 
 module ripple_carry_adder (a, b, cin, sum, cout);
 
-    input  [15:0] a, b;;
+    input  [15:0] a, b;
     input cin;
-    output [15:0] sum,
-    output cout
+    output [15:0] sum;
+    output cout;
     wire [15:0] carry;
 
     full_adder fa0 (a[0], b[0], cin, sum[0], cout[0]);
