@@ -1,0 +1,41 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002185e3f2ce0 .scope module, "full_adder" "full_adder" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+o000002185e427078 .functor BUFZ 1, C4<z>; HiZ drive
+o000002185e4270a8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002185e3daba0 .functor XOR 1, o000002185e427078, o000002185e4270a8, C4<0>, C4<0>;
+o000002185e4270d8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002185e3f3600 .functor XOR 1, L_000002185e3daba0, o000002185e4270d8, C4<0>, C4<0>;
+L_000002185e3f3760 .functor AND 1, o000002185e427078, o000002185e4270a8, C4<1>, C4<1>;
+L_000002185e4211e0 .functor AND 1, o000002185e4270a8, o000002185e4270d8, C4<1>, C4<1>;
+L_000002185e421250 .functor OR 1, L_000002185e3f3760, L_000002185e4211e0, C4<0>, C4<0>;
+L_000002185e4212c0 .functor AND 1, o000002185e4270d8, o000002185e427078, C4<1>, C4<1>;
+L_000002185e421330 .functor OR 1, L_000002185e421250, L_000002185e4212c0, C4<0>, C4<0>;
+v000002185e3dab00_0 .net *"_ivl_0", 0 0, L_000002185e3daba0;  1 drivers
+v000002185e3deda0_0 .net *"_ivl_10", 0 0, L_000002185e4212c0;  1 drivers
+v000002185e3dee40_0 .net *"_ivl_4", 0 0, L_000002185e3f3760;  1 drivers
+v000002185e3deee0_0 .net *"_ivl_6", 0 0, L_000002185e4211e0;  1 drivers
+v000002185e3f2e70_0 .net *"_ivl_8", 0 0, L_000002185e421250;  1 drivers
+v000002185e3f2f10_0 .net "a", 0 0, o000002185e427078;  0 drivers
+v000002185e3f2fb0_0 .net "b", 0 0, o000002185e4270a8;  0 drivers
+v000002185e3f3050_0 .net "cin", 0 0, o000002185e4270d8;  0 drivers
+v000002185e4210a0_0 .net "cout", 0 0, L_000002185e421330;  1 drivers
+v000002185e421140_0 .net "sum", 0 0, L_000002185e3f3600;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "full_adder.v";
