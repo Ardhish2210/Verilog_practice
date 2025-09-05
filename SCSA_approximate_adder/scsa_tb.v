@@ -9,6 +9,15 @@ wire cout;
 
 scsa uut (a, b, sum, cout);
 
+integer i, j;
+integer total_cases;
+integer error_count;
+integer error_val;
+integer abs_error;
+
+real AE, MAE, MSE, RMSE, MEP;
+real error_sum, abs_error_sum, sq_error_sum;
+
 initial begin 
     $dumpfile("scsa.vcd");
     $dumpvars(0, scsa_tb);
