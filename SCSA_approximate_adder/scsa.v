@@ -21,21 +21,24 @@ ripple_carry_two B0 (.a(a[1:0]), .b(b[1:0]), .cin(1'b0), .sum(sum[1:0]), .cout(c
 ripple_carry_two B1_0 (.a(a[3:2]), .b(b[3:2]), .cin(1'b0), .sum(sum1_0), .cout(c1_0));
 ripple_carry_two B1_1 (.a(a[3:2]), .b(b[3:2]), .cin(1'b1), .sum(sum1_1), .cout(c1_1));
 
-assign sum[3:2] = (c0) ? sum1_1:sum1_0;
-assign c1 = (c0) ? c1_1:c1_0;
+wire predict_c0 = a[1] & b[1];
+assign sum[3:2] = (predict_c0) ? sum1_1:sum1_0;
+assign c1 = (predict_c0) ? c1_1:c1_0;
 
 //CODE for BLOCK2
 ripple_carry_two B2_0 (.a(a[5:4]), .b(b[5:4]), .cin(1'b0), .sum(sum2_0), .cout(c2_0));
 ripple_carry_two B2_1 (.a(a[5:4]), .b(b[5:4]), .cin(1'b1), .sum(sum2_1), .cout(c2_1));
 
-assign sum[5:4] = (c1) ? sum2_1:sum2_0;
-assign c2 = (c1) ? c2_1:c2_0;
+wire predict_c1 = a[3] & b[3];
+assign sum[5:4] = (predict_c1) ? sum2_1:sum2_0;
+assign c2 = (predict_c1) ? c2_1:c2_0;
 
 //CODE for BLOCK3
 ripple_carry_two B3_0 (.a(a[7:6]), .b(b[7:6]), .cin(1'b0), .sum(sum3_0), .cout(c3_0));
 ripple_carry_two B3_1 (.a(a[7:6]), .b(b[7:6]), .cin(1'b1), .sum(sum3_1), .cout(c3_1));
 
-assign sum[7:6] = (c2) ? sum3_1:sum3_0;
-assign cout = (c2) ? c3_1:c3_0;
+wire predict_c2 = a[5] & b[5];
+assign sum[7:6] = (predict_c2) ? sum3_1:sum3_0;
+assign cout = (predict_c2) ? c3_1:c3_0;
 
 endmodule
