@@ -1,3 +1,5 @@
+`include "ripple_carry_two.v"
+`include "full_adder.v"
 module scsa (a, b, sum, cout);
 
 input [7:0] a, b;
