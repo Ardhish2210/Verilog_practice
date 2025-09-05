@@ -19,19 +19,49 @@ real AE, MAE, MSE, RMSE, MEP;
 real error_sum, abs_error_sum, sq_error_sum;
 
 initial begin 
-    $dumpfile("scsa.vcd");
-    $dumpvars(0, scsa_tb);
+    error_count = 0;
+    error_sum = 0;
+    abs_error_sum = 0;
+    sq_error_sum = 0;
+    total_cases = 0;
 
-    $monitor("Time: %0t || a: %d || b: %d || sum: %d || cout: %b", $time, a, b, sum, cout);
+    for (i = 0; i < 8; i = i + 1) begin
+        for (j = 0; j < 7; j = j + 1) begin
+            a = i; b = i;
+            #1;
 
-    a = 8'd0; b = 8'd0;
+            exact_sum = a + b;
+            exact_val = approx_sum - exact_sum;
+            abs_error = (error_val < 0) ? -error_val : error_val;
 
-    #10 a = 8'd10; b = 8'd1; 
-    #10 a = 8'd15; b = 8'd14; 
-    #10 a = 8'd50; b = 8'd34; 
-    #10 a = 8'd49; b = 8'd28; 
+            if (error_val != 0) begin
+                error_count = error_count + 1;
+            end
 
-    #10 $finish; 
+            error_sum = error_sum + error_val;
+            abs_error_sum = abs_error_sum + abs_error;
+            sq_error_sum = sq_error_sum + (error*val * error_val);
+            total_cases = total_cases + 1;
+        end
+    end
+
+    AE = error_sum / total_cases;
+    MAE = abs_error_sum / total_cases;
+    MSE = sq_error_sum / total_cases;
+    RMSE = $sqrt(MSE);
+    MEP = (MAE / 510.0)*100; // Normalised wrt to the max sum 255 + 255 = 510
+
+    $display("SCSA approximate adder error metrices");
+    $display("Total test cases = %0d", total_cases);
+    $display("Error Rate (ER) = %0.4f %%", (error_count*100)/total_cases);
+    $display("Average Error (AE) = %0.4f", AE);
+    $display("Mean Abs Error (MAE) = %0.4f", MAE);
+    $display("Mean Square Error (MSE) = %0.4f", MSE);
+    $display("Root Mean Square Error (RMSE) = %0.4f", RMSE);
+    $display("Mean Error Percentage (MEP) = %0.4f %%", MSE);
+
+    $finish;
+
 end
 
 endmodule
