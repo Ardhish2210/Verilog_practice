@@ -9,6 +9,7 @@ output cout;
 wire c_1, c_2;
 wire [2:0] lsb_sum;
 wire lsb_carry;
+
 // the LSB's are added directly without any carry_in (approx)
 assign lsb_sum = a[1:0] + b[1:0];
 assign sum[1:0] = lsb_sum[1:0];
