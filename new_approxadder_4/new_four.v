@@ -1,3 +1,6 @@
+`include "ripple_carry_adder.v"
+`include "full_adder.v"
+
 module new_adder (a, b, sum);
 
 input [31:0] a, b;
