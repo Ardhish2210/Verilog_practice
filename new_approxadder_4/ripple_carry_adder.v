@@ -1,0 +1,22 @@
+`include "full_adder"
+
+module ripple_carry_adder (a, b, cin, sum, cout);
+
+    input  [15:0] a, b;;
+    input cin;
+    output [15:0] sum,
+    output cout
+    wire [15:0] carry;
+
+    full_adder fa0 (a[0], b[0], cin, sum[0], cout[0]);
+
+    genvar i;
+    generate 
+        for (i = 1; i < 16; i = i + 1) begin : fa_loop
+            full_adder fa (a[i], b[i], carry[i-1], sum[i], carry[i]);
+        end
+    endgenerate
+
+    assign cout = carry[15];
+
+endmodule
