@@ -5,8 +5,8 @@ module scsa_tb;
 
 reg [7:0] a, b;
 wire [7:0] sum;
-wire [8:0] approx_sum;
-wire [8:0] exact_sum;
+wire [7:0] approx_sum;
+reg [7:0] exact_sum;
 
 wire cout;
 
@@ -22,6 +22,7 @@ real AE, MAE, MSE, RMSE, MEP;
 real error_sum, abs_error_sum, sq_error_sum;
 
 initial begin 
+
     error_count = 0;
     error_sum = 0;
     abs_error_sum = 0;
@@ -34,17 +35,17 @@ initial begin
             #1;
 
             exact_sum = a + b;
-            exact_val = approx_sum - exact_sum;
+            error_val = approx_sum - exact_sum;
             abs_error = (error_val < 0) ? -error_val : error_val;
 
             if (error_val != 0) begin
-                error_count = error_count + 1;
+                error_count++;
             end
 
-            error_sum = error_sum + error_val;
-            abs_error_sum = abs_error_sum + abs_error;
-            sq_error_sum = sq_error_sum + (error*val * error_val);
-            total_cases = total_cases + 1;
+            error_sum     = error_sum + error_val;
+                abs_error_sum = abs_error_sum + abs_error;
+                sq_error_sum  = sq_error_sum + (error_val * error_val);
+                total_cases++;
         end
     end
 
