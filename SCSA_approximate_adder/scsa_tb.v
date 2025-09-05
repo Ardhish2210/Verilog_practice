@@ -5,9 +5,12 @@ module scsa_tb;
 
 reg [7:0] a, b;
 wire [7:0] sum;
+wire [8:0] approx_sum;
+wire [8:0] exact_sum;
+
 wire cout;
 
-scsa uut (a, b, sum, cout);
+scsa uut (.a(a), .b(b), .sum(approx_sum), .cout(cout));
 
 integer i, j;
 integer total_cases;
@@ -25,8 +28,8 @@ initial begin
     sq_error_sum = 0;
     total_cases = 0;
 
-    for (i = 0; i < 8; i = i + 1) begin
-        for (j = 0; j < 7; j = j + 1) begin
+    for (i = 0; i < 256; i = i + 1) begin
+        for (j = 0; j < 256; j = j + 1) begin
             a = i; b = i;
             #1;
 
