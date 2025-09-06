@@ -13,7 +13,7 @@ module ripple_carry_adder (a, b, cin, sum, cout);
     genvar i;
     generate 
         for (i = 1; i < 16; i = i + 1) begin : fa_loop
-            full_adder fa (a[i], b[i], carry[i-1], sum[i], carry[i]);
+            full_adder fa (.a(a[i]), .b(b[i]), .cin(carry[i-1]), .sum(sum[i]), .cout(carry[i]));
         end
     endgenerate
 
