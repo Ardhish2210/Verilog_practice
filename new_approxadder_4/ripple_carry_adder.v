@@ -8,7 +8,7 @@ module ripple_carry_adder (a, b, cin, sum, cout);
     output cout;
     wire [15:0] carry;
 
-    full_adder fa0 (a[0], b[0], cin, sum[0], cout[0]);
+    full_adder fa0 (.a(a[0]), .b(b[0]), .cin(cin), .sum(sum[0]), .cout(carry[0]));
 
     genvar i;
     generate 
