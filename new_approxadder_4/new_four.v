@@ -1,7 +1,7 @@
 `include "ripple_carry_adder.v"
 //`include "full_adder.v"
 
-module new_adder (a, b, sum);
+module new_four (a, b, sum);
 
 input [31:0] a, b;
 output [32:0] sum;
