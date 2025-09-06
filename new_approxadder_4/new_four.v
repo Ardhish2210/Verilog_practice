@@ -13,7 +13,7 @@ assign cmsp = a[15] & b[15];
 assign sum[15] = a[15] ^ b[15] ^ cmsp;
 
 wire [16:0] temp_sum;
-assign temp_sum = a[31:16] + b[31:16] + cmsp;
+assign {temp_sum} = {1'b0, a[31:16]} + {1'b0, b[31:16]} + cmsp;
 assign sum[31:16] = temp_sum[15:0];
 assign sum[32] = temp_sum[16];
 
