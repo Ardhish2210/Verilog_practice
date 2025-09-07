@@ -27,4 +27,7 @@ initial begin
 
     #10 $finish;
 end
+
+always #5 clk = ~clk;
+
 endmodule
