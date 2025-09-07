@@ -18,7 +18,7 @@ initial begin
     clk = 0; rst = 1;
     #0.1 rst = 0;
 
-    #1 $finish;
+    #0.5 $finish;
 end
 
 always #0.1 clk = ~clk;
