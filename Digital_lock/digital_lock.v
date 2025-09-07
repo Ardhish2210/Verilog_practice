@@ -4,7 +4,7 @@
 module digital_lock (clk, rst, in_seq, out);
 
 input clk, rst;
-input [3:0] in_seq;
+input in_seq;
 output reg out;
 
 reg [2:0] state, next_state;
@@ -21,16 +21,14 @@ end
 always @(*) begin
     out = 0;
     case (state)
-
-    S0: next_state <= (in_seq[0]) ? S1:S0;
-    S1: next_state <= (in_seq[1]) ? S2:S0;
-    S2: next_state <= (in_seq[2]) ? S0:S3;
-    S3: next_state <= (in_seq[3]) ? OPEN_STATE:S0;
+    S0: next_state <= (in_seq == 1'b1) ? S1:S0;
+    S1: next_state <= (in_seq == 1'b1) ? S2:S0;
+    S2: next_state <= (in_seq == 1'b0) ? S3:S0;
+    S3: next_state <= (in_seq == 1'b1) ? OPEN_STATE:S0;
     OPEN_STATE: begin
         out <= 1;
         next_state <= S0;  
     end
-        
         default: begin
             next_state <= S0;
         end
