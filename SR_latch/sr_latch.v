@@ -1,12 +1,12 @@
-module sr_latch (s, r, clk, rst, q);
+module sr_latch (s, r, en, rst, q);
 
-input s, r, clk, rst;
+input s, r, en, rst;
 output reg q;
 
-always @(posedge clk or posedge rst) begin
+always @(*) begin
     if (rst) begin
         q <= 0;
-    end else begin
+    end else if (en) begin
         casex ({s, r})
         2'b00: q <= q;
         2'b01: q <= 1'b0;
