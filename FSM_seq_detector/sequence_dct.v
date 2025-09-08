@@ -16,6 +16,7 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
+
 always @(*) begin
     out = 0;
     case (state)
