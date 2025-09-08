@@ -21,8 +21,8 @@ always @(*) begin
     case (state)
     S0: next_state = in ? S0:S1;
     S1: next_state = in ? S2:S1;
-    S2: next_state = in ? S3:S0;
-    S3: next_state = in ? S4:S0;
+    S2: next_state = in ? S3:S1;
+    S3: next_state = in ? S4:S1;
     S4: begin
         next_state = in ? S0:S1;
         out = 1'b1;
