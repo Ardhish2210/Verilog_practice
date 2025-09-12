@@ -6,7 +6,6 @@
 Welcome to my Verilog learning laboratory! This repository chronicles my journey through the fascinating world of hardware description languages and digital design.
 
 
-
 ## 🎯 What's Inside
 
 This collection showcases fundamental Verilog concepts and implementations, featuring:
