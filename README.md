@@ -1,5 +1,3 @@
-
-
 # 🔧 Verilog_practice
 
 
