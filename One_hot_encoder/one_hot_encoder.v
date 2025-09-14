@@ -1,5 +1,5 @@
 module one_hot_encoder (a, out);
-  
+
 input [2:0] a;
 output reg [7:0] out;
 
