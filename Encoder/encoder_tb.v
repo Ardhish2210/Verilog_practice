@@ -13,9 +13,13 @@ initial begin
 
     $monitor("Time: %0t || a: %b || enable: %b || out: %b", $time, a, enable, out);
 
+    #5 a = 3'b000; enable = 0;
+    #5 a = 3'b010; enable = 1;
+    #5 a = 3'b110; enable = 1;
+    #5 a = 3'b011; enable = 1;
+    #5 a = 3'b101; enable = 1;
 
-    
-
+    #10 $finish;
 end
     
 endmodule
