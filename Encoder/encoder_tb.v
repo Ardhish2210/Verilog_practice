@@ -1,3 +1,6 @@
+`timescale 1ns/1ns
+`include "encoder.v"
+
 module encoder_tb; 
 
 reg [2:0] a;
@@ -13,7 +16,8 @@ initial begin
 
     $monitor("Time: %0t || a: %b || enable: %b || out: %b", $time, a, enable, out);
 
-    #5 a = 3'b000; enable = 0;
+    a = 3'b000; enable = 0;
+    
     #5 a = 3'b010; enable = 1;
     #5 a = 3'b110; enable = 1;
     #5 a = 3'b011; enable = 1;
