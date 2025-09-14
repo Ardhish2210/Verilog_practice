@@ -1,0 +1,59 @@
+$date
+	Mon Sep 15 02:03:46 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module encoder_tb $end
+$var wire 8 ! out [7:0] $end
+$var reg 3 " a [2:0] $end
+$var reg 1 # enable $end
+$scope module uut $end
+$var wire 3 $ a [2:0] $end
+$var wire 1 # enable $end
+$var reg 8 % out [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx %
+bx $
+x#
+bx "
+bx !
+$end
+#5
+b0 !
+b0 %
+0#
+b0 "
+b0 $
+#10
+b100 !
+b100 %
+1#
+b10 "
+b10 $
+#15
+b1000000 !
+b1000000 %
+b110 "
+b110 $
+#20
+b1000 !
+b1000 %
+b11 "
+b11 $
+#25
+b100000 !
+b100000 %
+b101 "
+b101 $
+#35
