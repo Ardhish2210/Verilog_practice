@@ -1,4 +1,4 @@
-# 🔷 Verilog HDL & RTL Design Interview Questions (36-40)
+# 🔷 Verilog HDL & RTL Design Interview Questions (41-45)
 ---
 
 ## Question 41: Write Verilog code for Gray to Binary converter.
