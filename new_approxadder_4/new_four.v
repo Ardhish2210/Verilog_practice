@@ -17,6 +17,7 @@ assign {temp_sum} = {1'b0, a[31:16]} + {1'b0, b[31:16]} + cmsp;
 assign sum[31:16] = temp_sum[15:0];
 assign sum[32] = temp_sum[16];
 
+
 // ripple_carry_adder r1 (.a(a[31:16]), .b(b[31:16]), .cin(cmsp), .sum(sum[31:16]), .cout(sum[32]));
 
 endmodule
